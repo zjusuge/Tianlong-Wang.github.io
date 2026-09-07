@@ -1,71 +1,86 @@
-# Welcome to Jekyll!
+# ============================================================
+# Site Configuration
+# ============================================================
+# Intended repository: zjusuge/zjusuge.github.io
+# Intended homepage: https://zjusuge.github.io/
 #
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# If you edit this file while running `jekyll serve`,
+# restart the local server.
 
+
+# ============================================================
 # Site Settings
-title                    : "Tianlong Wang"
-description              : "Key words: Debris flow; Landslides; Geotechnical engineering; Hydrology; PIML; ML; Prediction; Ensemble Learning; Optimization algorithm"
-repository               : "zjusuge/Tianlong-Wang.github.io"
-baseurl: "/Tianlong-Wang.github.io"
+# ============================================================
+
+title: "Tianlong Wang"
+
+description: "Physics-informed and explainable machine learning for debris flows, landslides, and hydrological prediction."
+
+repository: "zjusuge/zjusuge.github.io"
+
 url: "https://zjusuge.github.io"
-google_scholar_stats_use_cdn : true
+baseurl: ""
 
-# google analytics
-google_analytics_id      :  "G-E6WMVM4PZ0"
+google_scholar_stats_use_cdn: true
 
-# SEO Related
-google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
-baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
 
+# ============================================================
+# Google Analytics
+# ============================================================
+# Keep this ID only if it belongs to your own Analytics property.
+
+google_analytics_id: "G-E6WMVM4PZ0"
+
+
+# ============================================================
+# Search Engine Verification
+# ============================================================
+# Leave these values unset until you obtain your own codes.
+# For HTML-tag verification, enter only the content value,
+# not the complete <meta> tag.
+
+google_site_verification:
+bing_site_verification:
+baidu_site_verification:
+
+
+# ============================================================
 # Site Author
+# ============================================================
+
 author:
-  name             : "Tianlong Wang"
-  avatar           : "images/2.jpg"
-  bio              : "PhD Student at Zhejiang University and Nanyang Technological University"
-  location         : "Singapore"
-  employer         :
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=JNiHto0AAAAJ&hl=en&oi=ao"
-  email            : "tianlong_wang@zju.edu.cn"
-  researchgate     :  "https://www.researchgate.net/profile/Tianlong-Wang-7?ev=hdr_xprf"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "https://github.com/zjusuge"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0002-0598-5481"
-  poet             : "https://tianlongwang.notion.site/"
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  X          : 
-  vine             :
-  WeChat           :
-  xing             :
-  youtube          :
-  wikipedia        :
+  name: "Tianlong Wang"
+
+  avatar: "/images/2.jpg"
+
+  bio: "PhD Student, Zhejiang University | Joint Doctoral Research Training, NTU"
+
+  location: "Singapore"
+
+  email: "tianlong_wang@zju.edu.cn"
+
+  uri: "https://zjusuge.github.io/"
+
+  googlescholar: "https://scholar.google.com/citations?user=JNiHto0AAAAJ"
+
+  researchgate: "https://www.researchgate.net/profile/Tianlong-Wang-7"
+
+  orcid: "https://orcid.org/0000-0002-0598-5481"
+
+  # Usernames only: the template adds the URL prefixes.
+  github: "zjusuge"
+  linkedin: "tianlong-wang"
 
 
+# ============================================================
 # Reading Files
+# ============================================================
+
 include:
   - .htaccess
   - _pages
   - files
+
 exclude:
   - docs
   - google_scholar_crawler
@@ -93,22 +108,32 @@ exclude:
   - package.json
   - tmp
   - vendor
+
 keep_files:
   - .git
   - .svn
+
 encoding: "utf-8"
+
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 
+# ============================================================
 # Conversion
+# ============================================================
+
 markdown: kramdown
 highlighter: rouge
+
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
 
+# ============================================================
 # Markdown Processing
+# ============================================================
+
 kramdown:
   input: GFM
   hard_wrap: false
@@ -119,9 +144,12 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-# Defaults
+
+# ============================================================
+# Default Page Settings
+# ============================================================
+
 defaults:
-  # _pages
   - scope:
       path: ""
       type: pages
@@ -130,35 +158,47 @@ defaults:
       author_profile: true
 
 
-# Sass/SCSS
+# ============================================================
+# Sass / SCSS
+# ============================================================
+
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
 
 
-# Outputting
+# ============================================================
+# Output
+# ============================================================
+
 permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Shanghai
 
 
+# ============================================================
 # Plugins
+# ============================================================
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
+
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
 
+# ============================================================
 # HTML Compression
-# - http://jch.penibelst.de/
+# ============================================================
+
 compress_html:
   clippings: all
   ignore:
