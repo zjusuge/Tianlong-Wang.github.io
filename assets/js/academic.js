@@ -1,49 +1,43 @@
-/* ==========================================================
-   TIANLONG WANG — PROGRESSIVE ENHANCEMENT
-   No framework, no analytics, no external API requests.
-   ========================================================== */
+/*
+ * Tianlong Wang — Academic homepage
+ * Progressive enhancement without external JavaScript dependencies.
+ * Retain the repository's MIT LICENSE.
+ */
 
 (() => {
   "use strict";
 
   const root = document.documentElement;
-
-  /* --------------------------------------------------------
-     01. MOBILE NAVIGATION
-     -------------------------------------------------------- */
-
-  const menuButton = document.getElementById("menu-toggle");
+  const main = document.getElementById("tw-home");
+  const header = document.querySelector(".site-header");
   const navigation = document.getElementById("site-nav");
+  const menuButton = document.getElementById("menu-toggle");
 
-  if (menuButton && navigation) {
-    const mobileQuery = window.matchMedia("(max-width: 900px)");
+  if (!main) return;
 
-    const setMenuState = (open) => {
-      navigation.classList.toggle("is-open", open);
-      menuButton.setAttribute("aria-expanded", String(open));
+  const mobileQuery = window.matchMedia("(max-width: 900px)");
 
-      const symbol = menuButton.querySelector("span");
-      if (symbol) {
-        symbol.textContent = open ? "−" : "+";
-      }
-    };
+  /* ========================================================
+     1. Mobile navigation
+     ======================================================== */
+
+  function setMenuState(open) {
+    if (!navigation || !menuButton) return;
+
+    navigation.classList.toggle("is-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+
+    const symbol = menuButton.querySelector("span");
+    if (symbol) symbol.textContent = open ? "−" : "+";
+  }
+
+  if (navigation && menuButton) {
+    menuButton.hidden = false;
+    root.classList.add("has-js");
 
     menuButton.addEventListener("click", () => {
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
       setMenuState(!isOpen);
-    });
-
-    navigation.addEventListener("click", (event) => {
-      const link = event.target.closest("a");
-
-      if (link && mobileQuery.matches) {
-        /*
-         Return focus to a visible control before collapsing the menu.
-         The anchor's default action still performs the section jump.
-        */
-        menuButton.focus({ preventScroll: true });
-        setMenuState(false);
-      }
     });
 
     document.addEventListener("keydown", (event) => {
@@ -52,11 +46,30 @@
         navigation.classList.contains("is-open")
       ) {
         setMenuState(false);
-        menuButton.focus();
+        menuButton.focus({ preventScroll: true });
       }
     });
 
-    const handleViewportChange = () => {
+    document.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      if (
+        mobileQuery.matches &&
+        navigation.classList.contains("is-open") &&
+        !event.target.closest(".site-header")
+      ) {
+        const focusWasInsideMenu =
+          navigation.contains(document.activeElement);
+
+        setMenuState(false);
+
+        if (focusWasInsideMenu) {
+          menuButton.focus({ preventScroll: true });
+        }
+      }
+    });
+
+    function handleViewportChange() {
       const focusedElement = document.activeElement;
 
       if (
@@ -69,27 +82,23 @@
         focusedElement === menuButton
       ) {
         const firstLink = navigation.querySelector("a");
-        if (firstLink) {
-          firstLink.focus({ preventScroll: true });
-        }
+        if (firstLink) firstLink.focus({ preventScroll: true });
       }
 
       setMenuState(false);
-    };
+      scheduleNavigationUpdate();
+    }
 
     if (typeof mobileQuery.addEventListener === "function") {
       mobileQuery.addEventListener("change", handleViewportChange);
-    } else if (typeof mobileQuery.addListener === "function") {
+    } else {
       mobileQuery.addListener(handleViewportChange);
     }
-
-    menuButton.hidden = false;
-    root.classList.add("has-js");
   }
 
-  /* --------------------------------------------------------
-     02. PUBLICATION SEARCH & YEAR FILTER
-     -------------------------------------------------------- */
+  /* ========================================================
+     2. Publication search and year filter
+     ======================================================== */
 
   const controls = document.getElementById("publication-controls");
   const searchInput = document.getElementById("publication-search");
@@ -98,16 +107,17 @@
   const emptyState = document.getElementById("publication-empty");
 
   const publications = Array.from(
-    document.querySelectorAll("#publication-list .publication")
+    main.querySelectorAll("#publication-list > .publication")
   );
 
-  const normalize = (value) =>
-    String(value)
+  function normalize(value) {
+    return String(value)
       .normalize("NFKC")
       .toLocaleLowerCase("en")
       .replace(/[‐‑‒–—−]/g, "-")
       .replace(/\s+/g, " ")
       .trim();
+  }
 
   let resetPublicationFilters = () => {};
 
@@ -119,11 +129,19 @@
     emptyState &&
     publications.length
   ) {
-    const records = publications.map((element) => ({
-      element,
-      year: element.dataset.year || "",
-      searchableText: normalize(element.textContent)
-    }));
+    const records = publications.map((element) => {
+      const linkAddresses = Array.from(
+        element.querySelectorAll("a[href]")
+      )
+        .map((link) => link.getAttribute("href"))
+        .join(" ");
+
+      return {
+        element,
+        year: element.dataset.year || "",
+        text: normalize(`${element.textContent} ${linkAddresses}`)
+      };
+    });
 
     const years = Array.from(
       new Set(records.map((record) => record.year).filter(Boolean))
@@ -136,7 +154,7 @@
       yearSelect.appendChild(option);
     });
 
-    const applyPublicationFilters = () => {
+    function applyPublicationFilters() {
       const terms = normalize(searchInput.value)
         .split(" ")
         .filter(Boolean);
@@ -149,25 +167,21 @@
           selectedYear === "all" || record.year === selectedYear;
 
         const matchesSearch = terms.every((term) =>
-          record.searchableText.includes(term)
+          record.text.includes(term)
         );
 
         const visible = matchesYear && matchesSearch;
-
         record.element.hidden = !visible;
 
-        if (visible) {
-          visibleCount += 1;
-        }
+        if (visible) visibleCount += 1;
       });
 
-      const noun = visibleCount === 1 ? "publication" : "publications";
-
       resultStatus.textContent =
-        `${visibleCount} of ${records.length} ${noun} shown`;
+        `${visibleCount} of ${records.length} publications shown`;
 
       emptyState.hidden = visibleCount !== 0;
-    };
+      scheduleNavigationUpdate();
+    }
 
     resetPublicationFilters = () => {
       searchInput.value = "";
@@ -182,7 +196,7 @@
     controls.addEventListener("reset", (event) => {
       event.preventDefault();
       resetPublicationFilters();
-      searchInput.focus();
+      searchInput.focus({ preventScroll: true });
     });
 
     searchInput.addEventListener("input", applyPublicationFilters);
@@ -191,32 +205,128 @@
     controls.hidden = false;
     resultStatus.hidden = false;
 
-    applyPublicationFilters();
+    /*
+     * Defer the first application until all navigation state below
+     * has been initialized.
+     */
+    window.requestAnimationFrame(applyPublicationFilters);
   }
 
-  /* --------------------------------------------------------
-     03. ANCHORS INSIDE COLLAPSED OR FILTERED CONTENT
-     -------------------------------------------------------- */
+  /* ========================================================
+     3. Active navigation
+     ======================================================== */
 
-  const revealHashTarget = () => {
-    if (!window.location.hash) {
-      return;
+  const sectionLinks = navigation
+    ? Array.from(navigation.querySelectorAll('a[href^="#"]'))
+        .map((link) => ({
+          link,
+          section: document.getElementById(
+            link.getAttribute("href").slice(1)
+          )
+        }))
+        .filter((item) => item.section)
+    : [];
+
+  let navigationFrame = null;
+  let currentLink = null;
+  let lastHeaderHeight = 0;
+
+  function updateNavigation() {
+    navigationFrame = null;
+
+    const headerHeight = header
+      ? Math.ceil(header.getBoundingClientRect().height)
+      : 0;
+
+    if (headerHeight !== lastHeaderHeight) {
+      root.style.setProperty("--header-height", `${headerHeight}px`);
+      lastHeaderHeight = headerHeight;
     }
 
-    let id;
+    if (!sectionLinks.length) return;
+
+    /*
+     * Select the last section whose top has crossed the reading line.
+     * No section is selected while the visitor is at the top of the hero.
+     */
+    const readingLine =
+      headerHeight + Math.min(120, window.innerHeight * 0.18);
+
+    let activeLink = null;
+
+    sectionLinks.forEach(({ link, section }) => {
+      if (section.getBoundingClientRect().top <= readingLine) {
+        activeLink = link;
+      }
+    });
+
+    const pageHeight = document.documentElement.scrollHeight;
+    const atBottom =
+      pageHeight > window.innerHeight + 2 &&
+      window.scrollY + window.innerHeight >= pageHeight - 3;
+
+    if (atBottom) {
+      activeLink = sectionLinks[sectionLinks.length - 1].link;
+    }
+
+    if (activeLink === currentLink) return;
+
+    sectionLinks.forEach(({ link }) => {
+      if (link === activeLink) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    currentLink = activeLink;
+  }
+
+  function scheduleNavigationUpdate() {
+    if (navigationFrame !== null) return;
+    navigationFrame = window.requestAnimationFrame(updateNavigation);
+  }
+
+  window.addEventListener("scroll", scheduleNavigationUpdate, {
+    passive: true
+  });
+
+  window.addEventListener("resize", scheduleNavigationUpdate, {
+    passive: true
+  });
+
+  main.addEventListener("toggle", scheduleNavigationUpdate, true);
+
+  if ("ResizeObserver" in window) {
+    const layoutObserver = new ResizeObserver(
+      scheduleNavigationUpdate
+    );
+
+    if (header) layoutObserver.observe(header);
+    layoutObserver.observe(main);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleNavigationUpdate);
+  }
+
+  /* ========================================================
+     4. Anchors, filtered papers, and collapsed records
+     ======================================================== */
+
+  function getHashTarget(hash) {
+    if (!hash || hash === "#") return null;
 
     try {
-      id = decodeURIComponent(window.location.hash.slice(1));
+      return document.getElementById(
+        decodeURIComponent(hash.slice(1))
+      );
     } catch {
-      return;
+      return null;
     }
+  }
 
-    const target = document.getElementById(id);
-
-    if (!target) {
-      return;
-    }
-
+  function revealTarget(target) {
     const paper = target.closest(".publication");
 
     if (paper && paper.hidden) {
@@ -225,85 +335,113 @@
 
     let current = target;
 
-    while (current) {
+    while (current && current !== document.body) {
       if (current.tagName === "DETAILS") {
         current.open = true;
       }
-
       current = current.parentElement;
     }
+  }
+
+  function scrollToTarget(target, moveFocus = false) {
+    revealTarget(target);
 
     window.requestAnimationFrame(() => {
+      updateNavigation();
+
+      if (moveFocus) {
+        const normallyFocusable = target.matches(
+          "a[href], button, input, select, textarea, summary, [tabindex]"
+        );
+
+        if (!normallyFocusable) {
+          target.setAttribute("tabindex", "-1");
+        }
+
+        target.focus({ preventScroll: true });
+
+        if (!normallyFocusable) {
+          target.addEventListener(
+            "blur",
+            () => target.removeAttribute("tabindex"),
+            { once: true }
+          );
+        }
+      }
+
       target.scrollIntoView({ block: "start" });
-    });
-  };
-
-  window.addEventListener("hashchange", revealHashTarget);
-  revealHashTarget();
-
-  /* --------------------------------------------------------
-     04. ACTIVE NAVIGATION
-     -------------------------------------------------------- */
-
-  if (navigation && "IntersectionObserver" in window) {
-    const navLinks = Array.from(
-      navigation.querySelectorAll('a[href^="#"]')
-    );
-
-    const sectionLinks = new Map();
-
-    navLinks.forEach((link) => {
-      const targetId = link.getAttribute("href").slice(1);
-      const section = document.getElementById(targetId);
-
-      if (section) {
-        sectionLinks.set(section, link);
-      }
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries.find((entry) => entry.isIntersecting);
-
-        if (!visibleEntry) {
-          return;
-        }
-
-        navLinks.forEach((link) => {
-          link.removeAttribute("aria-current");
-        });
-
-        const activeLink = sectionLinks.get(visibleEntry.target);
-
-        if (activeLink) {
-          activeLink.setAttribute("aria-current", "location");
-        }
-      },
-      {
-        rootMargin: "-15% 0px -70% 0px",
-        threshold: 0
-      }
-    );
-
-    sectionLinks.forEach((link, section) => {
-      observer.observe(section);
+      scheduleNavigationUpdate();
     });
   }
 
-  /* --------------------------------------------------------
-     05. PRINT FULL PROFILE
-     -------------------------------------------------------- */
+  document.addEventListener("click", (event) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      !(event.target instanceof Element)
+    ) {
+      return;
+    }
+
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    /*
+     * Only enhance anchors belonging to this page.
+     * No browser-extension icons or external links are altered.
+     */
+    const belongsToPage =
+      link.classList.contains("skip-link") ||
+      link.closest("#tw-home, .site-header, .site-footer");
+
+    if (!belongsToPage) return;
+
+    const hash = link.getAttribute("href");
+    const target = getHashTarget(hash);
+    if (!target) return;
+
+    event.preventDefault();
+
+    if (navigation && navigation.contains(link)) {
+      setMenuState(false);
+    }
+
+    if (window.location.hash !== hash) {
+      window.history.pushState(null, "", hash);
+    }
+
+    scrollToTarget(target, true);
+  });
+
+  function revealCurrentHash() {
+    const target = getHashTarget(window.location.hash);
+
+    if (target) {
+      scrollToTarget(target);
+    } else {
+      scheduleNavigationUpdate();
+    }
+  }
+
+  window.addEventListener("hashchange", revealCurrentHash);
+  window.addEventListener("load", revealCurrentHash, { once: true });
+
+  /* ========================================================
+     5. Print the full profile
+     ======================================================== */
 
   const printButton = document.getElementById("print-page");
   let detailsBeforePrint = null;
 
-  const expandForPrint = () => {
-    if (detailsBeforePrint) {
-      return;
-    }
+  function expandForPrint() {
+    if (detailsBeforePrint !== null) return;
 
     detailsBeforePrint = Array.from(
-      document.querySelectorAll("details")
+      main.querySelectorAll("details")
     ).map((element) => ({
       element,
       open: element.open
@@ -312,19 +450,18 @@
     detailsBeforePrint.forEach(({ element }) => {
       element.open = true;
     });
-  };
+  }
 
-  const restoreAfterPrint = () => {
-    if (!detailsBeforePrint) {
-      return;
-    }
+  function restoreAfterPrint() {
+    if (detailsBeforePrint === null) return;
 
     detailsBeforePrint.forEach(({ element, open }) => {
       element.open = open;
     });
 
     detailsBeforePrint = null;
-  };
+    scheduleNavigationUpdate();
+  }
 
   window.addEventListener("beforeprint", expandForPrint);
   window.addEventListener("afterprint", restoreAfterPrint);
@@ -333,20 +470,22 @@
     printButton.hidden = false;
 
     printButton.addEventListener("click", () => {
+      expandForPrint();
       window.print();
     });
   }
 
-  /* --------------------------------------------------------
-     06. PORTRAIT FALLBACK
-     -------------------------------------------------------- */
+  /* ========================================================
+     6. Portrait fallback
+     ======================================================== */
 
   const portrait = document.getElementById("portrait");
 
   if (portrait) {
-    const hideUnavailablePortrait = () => {
+    function hideUnavailablePortrait() {
       portrait.hidden = true;
-    };
+      scheduleNavigationUpdate();
+    }
 
     portrait.addEventListener("error", hideUnavailablePortrait);
 
@@ -355,14 +494,16 @@
     }
   }
 
-  /* --------------------------------------------------------
-     07. COPYRIGHT YEAR
-     Does not pretend that the research content was updated.
-     -------------------------------------------------------- */
+  /* ========================================================
+     7. Copyright year
+     This is not a research-content "last updated" timestamp.
+     ======================================================== */
 
   const copyrightYear = document.getElementById("copyright-year");
 
   if (copyrightYear) {
     copyrightYear.textContent = String(new Date().getFullYear());
   }
+
+  updateNavigation();
 })();
