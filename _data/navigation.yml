@@ -6,6 +6,9 @@ main:
   - title: "Publications"
     url: "/#publications"
 
+  - title: "Software"
+    url: "/#research-software"
+
   - title: "Education"
     url: "/#education"
 
@@ -15,8 +18,5 @@ main:
   - title: "Honors"
     url: "/#honors"
 
-  - title: "Competitions"
-    url: "/#competitions"
-
-  - title: "Beyond Research"
-    url: "/#beyond-research"
+  - title: "Contact"
+    url: "/#contact"
