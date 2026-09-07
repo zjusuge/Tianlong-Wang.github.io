@@ -3,7 +3,7 @@ permalink: /
 title: ""
 excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning."
 author_profile: true
-show_postdoc_notice: false
+show_postdoc_notice: true
 cv_url: ""
 redirect_from:
   - /about/
