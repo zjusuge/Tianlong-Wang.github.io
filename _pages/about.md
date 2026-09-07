@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning. PhD student at Zhejiang University, seeking postdoctoral opportunities in 2027."
+excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning. PhD student at Zhejiang University, seeking postdoctoral opportunities starting in 2027."
 author_profile: true
 show_postdoc_notice: true
 cv_url: ""
@@ -24,20 +24,20 @@ redirect_from:
 
 **Geohazard prediction · Hydrological modelling · Physics-informed and explainable machine learning**
 
-I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. My doctoral supervisor is [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428) at ZJU, and my host supervisor is [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian) at NTU. I expect to complete my PhD in **June 2027**.
+I am a **PhD student at Zhejiang University (ZJU)**, supervised by [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428), with joint doctoral research training at **Nanyang Technological University (NTU)** under the supervision of [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian). I expect to complete my PhD in **June 2027**.
 
-My research examines how **environmental observations, physical knowledge, and machine learning** can improve predictions of **debris flows, landslide behaviour, and catchment hydrology**. My work spans regional susceptibility assessment, debris-flow source volumes and velocity, landslide displacement, and hydrological prediction.
+My research integrates environmental observations, physical knowledge, and machine learning to improve the prediction and understanding of **geohazards and hydrological processes**. My work spans debris-flow susceptibility, source volumes and velocity, landslide displacement and groundwater dynamics, and catchment hydrological prediction.
 
-Across these topics, I focus on three questions:
+Across these applications, I focus on three connected themes:
 
-- **Physical knowledge:** How can knowledge of the underlying processes inform data-driven prediction?
-- **Interpretability:** What do models learn from environmental observations, and how can their predictions be examined?
-- **Generalization:** How reliably do models perform beyond their training data, including under spatially structured evaluation?
+- **Physics-informed learning** — incorporating physical knowledge into data-driven models of hydrological and geohazard processes.
+- **Explainable prediction** — examining how environmental factors shape model predictions and relating these patterns to the underlying processes.
+- **Model generalization** — evaluating predictive reliability beyond the training data, with attention to spatially structured validation.
 
-My goal is to develop **accurate, physically grounded, and interpretable predictions** that can support geohazard assessment, early warning, and disaster mitigation.
+My goal is to develop accurate, physically grounded, and interpretable predictive methods that support geohazard assessment, early warning, and disaster mitigation.
 
 {% if page.show_postdoc_notice %}
-> **🔎 Seeking postdoctoral opportunities — 2027**  
+> **🔎 Postdoctoral opportunities — 2027**  
 > I am seeking a postdoctoral position following my expected PhD completion in **June 2027**. I welcome discussions with groups working on **geohazards, hydrological modelling, and physics-informed or explainable machine learning**. Please [contact me by email](mailto:tianlong_wang@zju.edu.cn) to discuss potential opportunities and research fit.
 {% endif %}
 
@@ -47,133 +47,92 @@ My goal is to develop **accurate, physically grounded, and interpretable predict
 
 [Email](mailto:tianlong_wang@zju.edu.cn) · [Google Scholar](https://scholar.google.com/citations?user=JNiHto0AAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Tianlong-Wang-7) · [ORCID](https://orcid.org/0000-0002-0598-5481) · [GitHub](https://github.com/zjusuge) · [LinkedIn](https://www.linkedin.com/in/tianlong-wang/)
 
-**Explore:** [Selected Research](#selected-research) · [Publications](#publications) · [Research Software](#research-software) · [Education](#education) · [Funding](#research-funding)
-
-
-<span class="anchor" id="selected-research"></span>
-
-# 🔬 Selected Research
-
-## Regional debris-flow susceptibility: DOME
-
-*Natural Hazards, 2026 · First and corresponding author*
-
-**Research question:** How can regional debris-flow susceptibility be assessed using an interpretable workflow with clearly separated model development and evaluation?
-
-DOME combines dynamic learner screening, ensemble optimization, out-of-fold stacking, calibration, and SHAP-based interpretation. The study uses **3,447 documented debris-flow units, 3,447 pseudo-absence units, and 11 environmental conditioning factors**.
-
-**Key result:** DOME achieved a **ROC AUC of 0.9828** on the independent test set and a **mean ROC AUC of 0.9662** under blocked spatial cross-validation, supporting spatial transferability **within the study area**.
-
-The model produces **calibrated relative susceptibility scores**. Socioeconomic variables are excluded from model training and used separately to construct an exposure-informed prioritization layer for management-oriented screening.
-
-[Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Archived release](https://doi.org/10.5281/zenodo.16911533)
-
-
-## Physics-informed prediction of debris-flow source volumes
-
-*Georisk, 2026 · First author*
-
-**Research question:** How can physical knowledge be incorporated into the prediction of post-seismic debris-flow source volumes?
-
-This study develops a **physics-informed generative deep learning framework** for source-volume prediction. It represents a central direction of my research: integrating physical knowledge with data-driven methods to predict quantities relevant to geohazard assessment.
-
-[Paper](https://doi.org/10.1080/17499518.2026.2651228)
-
-
-## Predicting and explaining debris-flow velocity
-
-*Journal of Hydrology, 2024 · First author*
-
-**Research question:** How can debris-flow velocity be predicted while making the model's predictions more interpretable?
-
-This study develops a **multi-strategy fusion stacking ensemble learning model** for debris-flow velocity prediction and explanation. It complements my work on regional susceptibility and source volumes by focusing on a characteristic of debris-flow motion.
-
-[Paper](https://doi.org/10.1016/j.jhydrol.2024.131347)
+**Explore:** [Publications](#publications) · [Research Software](#research-software) · [Patents](#patents) · [Education](#education) · [Funding](#research-funding) · [Honors](#honors) · [Contact](#contact)
 
 
 <span class="anchor" id="publications"></span>
 
 # 📚 Publications
 
-**My name is highlighted in bold; an asterisk (\*) indicates a corresponding author.** Paper, code, data, and archive links are included where available.
+**My name is highlighted in bold; an asterisk (\*) indicates a corresponding author.** DOI links are provided for every paper, alongside code, data, and archived releases where available.
 
 <a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ"><img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&amp;logo=Google%20Scholar&amp;labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=citations" alt="Google Scholar citation count" loading="lazy"></a>
 
 ## Journal Articles
 
 1. **Tianlong Wang**\*, H. Yang. DOME: a dynamic optimization meta-ensemble framework for debris-flow susceptibility assessment with SHAP-based interpretation. *Natural Hazards*, **122**, Article 545, **2026**.  
-   [Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Code archive](https://doi.org/10.5281/zenodo.16911533)
+   DOI: [10.1007/s11069-026-08307-2](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · Code archive: [10.5281/zenodo.16911533](https://doi.org/10.5281/zenodo.16911533)
 
 2. **Tianlong Wang**, H. Yang, H. Sun\*. Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative Deep Learning Framework. *Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards*, 1–29, **2026**.  
-   [Paper](https://doi.org/10.1080/17499518.2026.2651228)
+   DOI: [10.1080/17499518.2026.2651228](https://doi.org/10.1080/17499518.2026.2651228)
 
 3. K. Zhang, **Tianlong Wang**, J. Su, H. Sun\*. Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model: A Case Study of Fenshuijiang River Basin. *Earth Science*, **2026**. In Chinese with English abstract.  
-   [Paper](https://doi.org/10.3799/dqkx.2025.290)
+   DOI: [10.3799/dqkx.2025.290](https://doi.org/10.3799/dqkx.2025.290)
 
 4. H. Yang, **Tianlong Wang**\*, N. I. Fomin, S. Xiao, L. Liu. An integrated IKOA-CNN-BiGRU-Attention framework with SHAP explainability for high-precision debris flow hazard prediction in the Nujiang river basin, China. *PLOS ONE*, **20**(6), e0326587, **2025**.  
-   [Paper](https://doi.org/10.1371/journal.pone.0326587) · [Data](https://doi.org/10.5281/zenodo.15050116)
+   DOI: [10.1371/journal.pone.0326587](https://doi.org/10.1371/journal.pone.0326587) · Data: [10.5281/zenodo.15050116](https://doi.org/10.5281/zenodo.15050116)
 
 5. **Tianlong Wang**, Q. Ge, T. Ma, et al. A novel method for predicting debris flow hazard: a multi-strategy fusion approach based on the light gradient boosting machine framework. *Stochastic Environmental Research and Risk Assessment*, **39**, 4867–4890, **2025**.  
-   [Paper](https://doi.org/10.1007/s00477-025-02955-9)
+   DOI: [10.1007/s00477-025-02955-9](https://doi.org/10.1007/s00477-025-02955-9)
 
 6. **Tianlong Wang**, K. Zhang, Z. Liu, T. Ma, R. Luo, H. Chen, X. Wang, W. Ge, H. Sun\*. Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking ensemble learning model. *Journal of Hydrology*, **638**, 131347, **2024**.  
-   [Paper](https://doi.org/10.1016/j.jhydrol.2024.131347)
+   DOI: [10.1016/j.jhydrol.2024.131347](https://doi.org/10.1016/j.jhydrol.2024.131347)
 
 7. **Tianlong Wang**, R. Luo, T. Ma, et al. Study and verification on an improved comprehensive prediction model of landslide displacement. *Bulletin of Engineering Geology and the Environment*, **83**, Article 90, **2024**.  
-   [Paper](https://doi.org/10.1007/s10064-024-03581-5)
+   DOI: [10.1007/s10064-024-03581-5](https://doi.org/10.1007/s10064-024-03581-5)
 
 8. Z. Chu, S. Yu, X. Li, X. Lu, X. Wang, R. Luo, **Tianlong Wang**\*. Laboratory model test on the treatment of engineering slurry by vacuum drainage method. *Journal of Yangtze River Scientific Research Institute*, **41**(9), 114–122, **2024**.  
-   [Paper](https://doi.org/10.11988/ckyyb.20230665)
+   DOI: [10.11988/ckyyb.20230665](https://doi.org/10.11988/ckyyb.20230665)
 
 9. **Tianlong Wang**, D. Peng, X. Wang, B. Wu, R. Luo, Z. Chu, H. Sun\*. Study on wavelet multi-scale analysis and prediction of landslide groundwater. *Journal of Hydroinformatics*, **26**(1), 237–254, **2024**.  
-   [Paper](https://doi.org/10.2166/hydro.2023.299)
+   DOI: [10.2166/hydro.2023.299](https://doi.org/10.2166/hydro.2023.299)
 
 10. **Tianlong Wang**, Xiaorui Tao, Dong-kun Wu, Haotian Feng. Determining the location of River Dam Group based on set cover Model: A case study of Zambezi River Basin. *Scientific Research and Reviews*, **14**, 122, **2021**.  
-    [Paper](https://doi.org/10.28933/srr-2021-03-1005)
+    DOI: [10.28933/srr-2021-03-1005](https://doi.org/10.28933/srr-2021-03-1005)
 
 11. **Tianlong Wang**, H. Zhang, X. Tao, W. Chu. Research on Prediction and Optimization of Slope Deformation in Mining Area. *Environment, Resource and Ecology Journal*, **4**, 66–69, **2020**.  
-    [Paper](https://doi.org/10.23977/erej.2020.040110)
+    DOI: [10.23977/erej.2020.040110](https://doi.org/10.23977/erej.2020.040110)
 
 12. **Tianlong Wang**, Hongyan Bao, Hairui Zhang. Optimization of Task Pricing Based on Multiple Regression Analysis and Game Theory. *Journal of eSciences*, **3**, 9, **2020**.  
-    [Paper](https://doi.org/10.28933/esciences-2020-01-1805)
+    DOI: [10.28933/esciences-2020-01-1805](https://doi.org/10.28933/esciences-2020-01-1805)
 
 13. **Tianlong Wang**, Xiaorui Tao, Jiamei Zhang, Yulei Li. Predicting Traffic Congestion Time Based on Kalman Filter Algorithm. *Advances in Research and Reviews*, **1**, 7, **2020**.  
-    [Paper](https://doi.org/10.28933/arr-2020-06-2205)
+    DOI: [10.28933/arr-2020-06-2205](https://doi.org/10.28933/arr-2020-06-2205)
 
 
 ## Conference Papers
 
 1. **Tianlong Wang**, J. Wang, X. Shao. Carbon emission forecast of China Transport Industry Based on Grey - Markov. In *Proceedings of the International Conference on Computing and Big Data (ICCBD)*, **2021**.  
-   [Paper](https://doi.org/10.1109/ICCBD53833.2021.00192)
+   DOI: [10.1109/ICCBD53833.2021.00192](https://doi.org/10.1109/ICCBD53833.2021.00192)
 
 
 <span class="anchor" id="research-software"></span>
 
 # 💻 Research Software
 
-The following repositories provide research implementations and reproducibility code for my work on geohazards and hydrology. Please consult the individual repositories for their scope, data requirements, dependencies, and licensing.
+Research implementations and reproducibility code for my work on geohazards and hydrology. Each repository documents its scope, data requirements, and usage.
 
-### DOME
+## DOME
 
-A dynamic optimization meta-ensemble framework for **regional debris-flow susceptibility assessment**, including model implementation and a pseudo-absence generation workflow.
+A dynamic optimization meta-ensemble framework for **regional debris-flow susceptibility assessment**, with model implementation and a pseudo-absence generation workflow.
 
-[Repository](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Zenodo archive](https://doi.org/10.5281/zenodo.16911533)
+[Repository](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · Paper DOI: [10.1007/s11069-026-08307-2](https://doi.org/10.1007/s11069-026-08307-2) · Code archive: [10.5281/zenodo.16911533](https://doi.org/10.5281/zenodo.16911533)
 
-### TabPFNv2.5-DebrisFlow
+## TabPFNv2.5-DebrisFlow
 
-Benchmarking **zero-shot TabPFN-2.5** against **10 Bayesian-optimised machine learning baselines** for catchment-scale debris-flow volume prediction using **60 samples** and repeated nested cross-validation.
+Benchmarking **zero-shot TabPFN-2.5** against Bayesian-optimised machine learning baselines for **catchment-scale debris-flow volume prediction**, using repeated nested cross-validation.
 
 [Repository](https://github.com/zjusuge/TabPFNv2.5-DebrisFlow)
 
-### BWSD — Fengshuwan Case Study
+## BWSD — Fengshuwan Case Study
 
 Lightweight reproducibility code for the core daily **Basin Water Storage Degree (BWSD)** calculation in the Fengshuwan catchment.
 
 [Repository](https://github.com/zjusuge/bwsd-fengshuwan-case)
 
-### HydroPIML-RS — Fengshuwan Case Study
+## HydroPIML-RS — Fengshuwan Case Study
 
-Lightweight reproducibility code for the **short-lead runoff and water-stage prediction** experiment in the Fengshuwan catchment.
+Lightweight reproducibility code for **short-lead runoff and water-stage prediction** in the Fengshuwan catchment.
 
 [Repository](https://github.com/zjusuge/hydropiml-rs-fengshuwan-case)
 
@@ -219,8 +178,6 @@ Host supervisor: [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian
 <span class="anchor" id="research-funding"></span>
 
 # 💼 Funding & Research Projects
-
-My doctoral research and training have received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
 
 ## Individual Funding & Scholarships
 
@@ -349,7 +306,11 @@ Research and poetry offer me different ways of looking closely at the world: one
 
 # ✉️ Contact
 
+{% if page.show_postdoc_notice %}
 I welcome enquiries about **postdoctoral opportunities starting in 2027**, research collaborations, and the methods or software associated with my work.
+{% else %}
+I welcome enquiries about research collaborations and the methods or software associated with my work.
+{% endif %}
 
 **Email:** [tianlong_wang@zju.edu.cn](mailto:tianlong_wang@zju.edu.cn)
 
