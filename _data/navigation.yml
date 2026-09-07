@@ -1,7 +1,7 @@
 # Main navigation
 main:
-  - title: "About"
-    url: "/#about-me"
+  - title: "Research"
+    url: "/#research"
 
   - title: "Publications"
     url: "/#publications"
@@ -15,8 +15,8 @@ main:
   - title: "Funding"
     url: "/#research-funding"
 
-  - title: "Honors"
-    url: "/#honors"
+  - title: "Record"
+    url: "/#academic-record"
 
   - title: "Contact"
     url: "/#contact"
