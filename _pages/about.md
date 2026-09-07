@@ -66,7 +66,7 @@ My goal is to develop accurate, physically grounded, and interpretable predictiv
 2. **Tianlong Wang**, H. Yang, H. Sun\*. Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative Deep Learning Framework. *Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards*, 1–29, **2026**.  
    DOI: [10.1080/17499518.2026.2651228](https://doi.org/10.1080/17499518.2026.2651228)
 
-3. K. Zhang, **Tianlong Wang**, J. Su, H. Sun\*. Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model: A Case Study of Fenshuijiang River Basin. *Earth Science*, **2026**. In Chinese with English abstract.  
+3. K. Zhang, **Tianlong Wang**, J. Su, H. Sun\*. Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model: A Case Study of Fenshuijiang River Basin. *Earth Science*, **2026**. 
    DOI: [10.3799/dqkx.2025.290](https://doi.org/10.3799/dqkx.2025.290)
 
 4. H. Yang, **Tianlong Wang**\*, N. I. Fomin, S. Xiao, L. Liu. An integrated IKOA-CNN-BiGRU-Attention framework with SHAP explainability for high-precision debris flow hazard prediction in the Nujiang river basin, China. *PLOS ONE*, **20**(6), e0326587, **2025**.  
