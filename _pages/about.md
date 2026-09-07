@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning. Seeking postdoctoral opportunities in 2027."
+excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning. PhD student at Zhejiang University, seeking postdoctoral opportunities in 2027."
 author_profile: true
 show_postdoc_notice: true
 cv_url: ""
@@ -22,26 +22,24 @@ redirect_from:
 
 # 👋 About
 
-I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. I am supervised by [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428) at ZJU and hosted by [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian) at NTU. I expect to complete my PhD in **June 2027**.
+**Geohazard prediction · Hydrological modelling · Physics-informed and explainable machine learning**
+
+I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. My doctoral supervisor is [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428) at ZJU, and my host supervisor is [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian) at NTU. I expect to complete my PhD in **June 2027**.
+
+My research examines how **environmental observations, physical knowledge, and machine learning** can improve predictions of **debris flows, landslide behaviour, and catchment hydrology**. My work spans regional susceptibility assessment, debris-flow source volumes and velocity, landslide displacement, and hydrological prediction.
+
+Across these topics, I focus on three questions:
+
+- **Physical knowledge:** How can knowledge of the underlying processes inform data-driven prediction?
+- **Interpretability:** What do models learn from environmental observations, and how can their predictions be examined?
+- **Generalization:** How reliably do models perform beyond their training data, including under spatially structured evaluation?
+
+My goal is to develop **accurate, physically grounded, and interpretable predictions** that can support geohazard assessment, early warning, and disaster mitigation.
 
 {% if page.show_postdoc_notice %}
 > **🔎 Seeking postdoctoral opportunities — 2027**  
-> I am seeking postdoctoral opportunities following my expected PhD completion in **June 2027**. My research interests include **geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning**. I welcome discussions with prospective supervisors and research groups. Please [contact me by email](mailto:tianlong_wang@zju.edu.cn) to explore potential opportunities.
+> I am seeking a postdoctoral position following my expected PhD completion in **June 2027**. I welcome discussions with groups working on **geohazards, hydrological modelling, and physics-informed or explainable machine learning**. Please [contact me by email](mailto:tianlong_wang@zju.edu.cn) to discuss potential opportunities and research fit.
 {% endif %}
-
-My research connects **geohazards, hydrology, and machine learning**, with a particular focus on **debris flows and landslides**. I investigate how environmental observations and physical knowledge can improve the prediction of hazardous processes, from water moving through a catchment to slope deformation and debris-flow motion.
-
-My work spans **regional susceptibility assessment, debris-flow characteristics, landslide displacement, and hydrological prediction**, with three central themes:
-
-- **Physics-informed learning:** incorporating physical knowledge into data-driven models.
-- **Explainable prediction:** interpreting model outputs and examining the contributions of environmental factors.
-- **Model generalization:** evaluating predictive performance beyond the training data.
-
-My goal is to develop predictions that are **accurate, physically grounded, and interpretable**, supporting early warning and disaster mitigation.
-
-My doctoral research and training have received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
-
-I welcome research discussions and collaborations across these areas.
 
 {% if page.cv_url and page.cv_url != "" %}
 **[Download CV (PDF)]({{ page.cv_url | relative_url }})**
@@ -49,179 +47,241 @@ I welcome research discussions and collaborations across these areas.
 
 [Email](mailto:tianlong_wang@zju.edu.cn) · [Google Scholar](https://scholar.google.com/citations?user=JNiHto0AAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Tianlong-Wang-7) · [ORCID](https://orcid.org/0000-0002-0598-5481) · [GitHub](https://github.com/zjusuge) · [LinkedIn](https://www.linkedin.com/in/tianlong-wang/)
 
-Citation metrics:
-<a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ"><img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&amp;logo=Google%20Scholar&amp;labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=citations" alt="Google Scholar citation count" loading="lazy"></a>
+**Explore:** [Selected Research](#selected-research) · [Publications](#publications) · [Research Software](#research-software) · [Education](#education) · [Funding](#research-funding)
+
+
+<span class="anchor" id="selected-research"></span>
+
+# 🔬 Selected Research
+
+## Regional debris-flow susceptibility: DOME
+
+*Natural Hazards, 2026 · First and corresponding author*
+
+**Research question:** How can regional debris-flow susceptibility be assessed using an interpretable workflow with clearly separated model development and evaluation?
+
+DOME combines dynamic learner screening, ensemble optimization, out-of-fold stacking, calibration, and SHAP-based interpretation. The study uses **3,447 documented debris-flow units, 3,447 pseudo-absence units, and 11 environmental conditioning factors**.
+
+**Key result:** DOME achieved a **ROC AUC of 0.9828** on the independent test set and a **mean ROC AUC of 0.9662** under blocked spatial cross-validation, supporting spatial transferability **within the study area**.
+
+The model produces **calibrated relative susceptibility scores**. Socioeconomic variables are excluded from model training and used separately to construct an exposure-informed prioritization layer for management-oriented screening.
+
+[Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Archived release](https://doi.org/10.5281/zenodo.16911533)
+
+
+## Physics-informed prediction of debris-flow source volumes
+
+*Georisk, 2026 · First author*
+
+**Research question:** How can physical knowledge be incorporated into the prediction of post-seismic debris-flow source volumes?
+
+This study develops a **physics-informed generative deep learning framework** for source-volume prediction. It represents a central direction of my research: integrating physical knowledge with data-driven methods to predict quantities relevant to geohazard assessment.
+
+[Paper](https://doi.org/10.1080/17499518.2026.2651228)
+
+
+## Predicting and explaining debris-flow velocity
+
+*Journal of Hydrology, 2024 · First author*
+
+**Research question:** How can debris-flow velocity be predicted while making the model's predictions more interpretable?
+
+This study develops a **multi-strategy fusion stacking ensemble learning model** for debris-flow velocity prediction and explanation. It complements my work on regional susceptibility and source volumes by focusing on a characteristic of debris-flow motion.
+
+[Paper](https://doi.org/10.1016/j.jhydrol.2024.131347)
 
 
 <span class="anchor" id="publications"></span>
 
 # 📚 Publications
 
-**My name is highlighted in bold; an asterisk (\*) indicates a corresponding author.** Links to papers, code, data, and archived releases are provided where available.
+**My name is highlighted in bold; an asterisk (\*) indicates a corresponding author.** Paper, code, data, and archive links are included where available.
 
-## 📄 Journal Articles
+<a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ"><img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&amp;logo=Google%20Scholar&amp;labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=citations" alt="Google Scholar citation count" loading="lazy"></a>
 
-1. **Tianlong Wang**\*, H. Yang. DOME: a dynamic optimization meta-ensemble framework for debris-flow susceptibility assessment with SHAP-based interpretation. *Natural Hazards*, **122**, Article 545, **2026**. [DOI](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Code archive](https://doi.org/10.5281/zenodo.16911533)
+## Journal Articles
 
-1. **Tianlong Wang**, H. Yang, H. Sun\*. Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative Deep Learning Framework. *Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards*, 1–29, **2026**. [DOI](https://doi.org/10.1080/17499518.2026.2651228)
+1. **Tianlong Wang**\*, H. Yang. DOME: a dynamic optimization meta-ensemble framework for debris-flow susceptibility assessment with SHAP-based interpretation. *Natural Hazards*, **122**, Article 545, **2026**.  
+   [Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Code archive](https://doi.org/10.5281/zenodo.16911533)
 
-1. K. Zhang, **Tianlong Wang**, J. Su, H. Sun\*. Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model: A Case Study of Fenshuijiang River Basin. *Earth Science*, **2026**. In Chinese with English abstract. [DOI](https://doi.org/10.3799/dqkx.2025.290)
+2. **Tianlong Wang**, H. Yang, H. Sun\*. Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative Deep Learning Framework. *Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards*, 1–29, **2026**.  
+   [Paper](https://doi.org/10.1080/17499518.2026.2651228)
 
-1. H. Yang, **Tianlong Wang**\*, N. I. Fomin, S. Xiao, L. Liu. An integrated IKOA-CNN-BiGRU-Attention framework with SHAP explainability for high-precision debris flow hazard prediction in the Nujiang river basin, China. *PLOS ONE*, **20**(6), e0326587, **2025**. [DOI](https://doi.org/10.1371/journal.pone.0326587) · [Data](https://doi.org/10.5281/zenodo.15050116)
+3. K. Zhang, **Tianlong Wang**, J. Su, H. Sun\*. Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model: A Case Study of Fenshuijiang River Basin. *Earth Science*, **2026**. In Chinese with English abstract.  
+   [Paper](https://doi.org/10.3799/dqkx.2025.290)
 
-1. **Tianlong Wang**, Q. Ge, T. Ma, et al. A novel method for predicting debris flow hazard: a multi-strategy fusion approach based on the light gradient boosting machine framework. *Stochastic Environmental Research and Risk Assessment*, **39**, 4867–4890, **2025**. [DOI](https://doi.org/10.1007/s00477-025-02955-9)
+4. H. Yang, **Tianlong Wang**\*, N. I. Fomin, S. Xiao, L. Liu. An integrated IKOA-CNN-BiGRU-Attention framework with SHAP explainability for high-precision debris flow hazard prediction in the Nujiang river basin, China. *PLOS ONE*, **20**(6), e0326587, **2025**.  
+   [Paper](https://doi.org/10.1371/journal.pone.0326587) · [Data](https://doi.org/10.5281/zenodo.15050116)
 
-1. **Tianlong Wang**, K. Zhang, Z. Liu, T. Ma, R. Luo, H. Chen, X. Wang, W. Ge, H. Sun\*. Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking ensemble learning model. *Journal of Hydrology*, **638**, 131347, **2024**. [DOI](https://doi.org/10.1016/j.jhydrol.2024.131347)
+5. **Tianlong Wang**, Q. Ge, T. Ma, et al. A novel method for predicting debris flow hazard: a multi-strategy fusion approach based on the light gradient boosting machine framework. *Stochastic Environmental Research and Risk Assessment*, **39**, 4867–4890, **2025**.  
+   [Paper](https://doi.org/10.1007/s00477-025-02955-9)
 
-1. **Tianlong Wang**, R. Luo, T. Ma, et al. Study and verification on an improved comprehensive prediction model of landslide displacement. *Bulletin of Engineering Geology and the Environment*, **83**, Article 90, **2024**. [DOI](https://doi.org/10.1007/s10064-024-03581-5)
+6. **Tianlong Wang**, K. Zhang, Z. Liu, T. Ma, R. Luo, H. Chen, X. Wang, W. Ge, H. Sun\*. Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking ensemble learning model. *Journal of Hydrology*, **638**, 131347, **2024**.  
+   [Paper](https://doi.org/10.1016/j.jhydrol.2024.131347)
 
-1. Z. Chu, S. Yu, X. Li, X. Lu, X. Wang, R. Luo, **Tianlong Wang**\*. Laboratory model test on the treatment of engineering slurry by vacuum drainage method. *Journal of Yangtze River Scientific Research Institute*, **41**(9), 114–122, **2024**. [DOI](https://doi.org/10.11988/ckyyb.20230665)
+7. **Tianlong Wang**, R. Luo, T. Ma, et al. Study and verification on an improved comprehensive prediction model of landslide displacement. *Bulletin of Engineering Geology and the Environment*, **83**, Article 90, **2024**.  
+   [Paper](https://doi.org/10.1007/s10064-024-03581-5)
 
-1. **Tianlong Wang**, D. Peng, X. Wang, B. Wu, R. Luo, Z. Chu, H. Sun\*. Study on wavelet multi-scale analysis and prediction of landslide groundwater. *Journal of Hydroinformatics*, **26**(1), 237–254, **2024**. [DOI](https://doi.org/10.2166/hydro.2023.299)
+8. Z. Chu, S. Yu, X. Li, X. Lu, X. Wang, R. Luo, **Tianlong Wang**\*. Laboratory model test on the treatment of engineering slurry by vacuum drainage method. *Journal of Yangtze River Scientific Research Institute*, **41**(9), 114–122, **2024**.  
+   [Paper](https://doi.org/10.11988/ckyyb.20230665)
 
+9. **Tianlong Wang**, D. Peng, X. Wang, B. Wu, R. Luo, Z. Chu, H. Sun\*. Study on wavelet multi-scale analysis and prediction of landslide groundwater. *Journal of Hydroinformatics*, **26**(1), 237–254, **2024**.  
+   [Paper](https://doi.org/10.2166/hydro.2023.299)
 
-<details>
-<summary>📂 Earlier journal articles — 2020–2021</summary>
-<div markdown="1">
+10. **Tianlong Wang**, Xiaorui Tao, Dong-kun Wu, Haotian Feng. Determining the location of River Dam Group based on set cover Model: A case study of Zambezi River Basin. *Scientific Research and Reviews*, **14**, 122, **2021**.  
+    [Paper](https://doi.org/10.28933/srr-2021-03-1005)
 
-1. **Tianlong Wang**, Xiaorui Tao, Dong-kun Wu, Haotian Feng. Determining the location of River Dam Group based on set cover Model: A case study of Zambezi River Basin. *Scientific Research and Reviews*, **14**, 122, **2021**. [DOI](https://doi.org/10.28933/srr-2021-03-1005)
+11. **Tianlong Wang**, H. Zhang, X. Tao, W. Chu. Research on Prediction and Optimization of Slope Deformation in Mining Area. *Environment, Resource and Ecology Journal*, **4**, 66–69, **2020**.  
+    [Paper](https://doi.org/10.23977/erej.2020.040110)
 
-1. **Tianlong Wang**, H. Zhang, X. Tao, W. Chu. Research on Prediction and Optimization of Slope Deformation in Mining Area. *Environment, Resource and Ecology Journal*, **4**, 66–69, **2020**. [DOI](https://doi.org/10.23977/erej.2020.040110)
+12. **Tianlong Wang**, Hongyan Bao, Hairui Zhang. Optimization of Task Pricing Based on Multiple Regression Analysis and Game Theory. *Journal of eSciences*, **3**, 9, **2020**.  
+    [Paper](https://doi.org/10.28933/esciences-2020-01-1805)
 
-1. **Tianlong Wang**, Hongyan Bao, Hairui Zhang. Optimization of Task Pricing Based on Multiple Regression Analysis and Game Theory. *Journal of eSciences*, **3**, 9, **2020**. [DOI](https://doi.org/10.28933/esciences-2020-01-1805)
-
-1. **Tianlong Wang**, Xiaorui Tao, Jiamei Zhang, Yulei Li. Predicting Traffic Congestion Time Based on Kalman Filter Algorithm. *Advances in Research and Reviews*, **1**, 7, **2020**. [DOI](https://doi.org/10.28933/arr-2020-06-2205)
-
-</div>
-</details>
-
-
-## 🎤 Conference Papers
-
-1. **Tianlong Wang**, J. Wang, X. Shao. Carbon emission forecast of China Transport Industry Based on Grey - Markov. In *Proceedings of the International Conference on Computing and Big Data (ICCBD)*, **2021**. [DOI](https://doi.org/10.1109/ICCBD53833.2021.00192)
+13. **Tianlong Wang**, Xiaorui Tao, Jiamei Zhang, Yulei Li. Predicting Traffic Congestion Time Based on Kalman Filter Algorithm. *Advances in Research and Reviews*, **1**, 7, **2020**.  
+    [Paper](https://doi.org/10.28933/arr-2020-06-2205)
 
 
-## 💡 Patents and Patent Applications
+## Conference Papers
 
-<details>
-<summary>📂 View patent records</summary>
-<div markdown="1">
+1. **Tianlong Wang**, J. Wang, X. Shao. Carbon emission forecast of China Transport Industry Based on Grey - Markov. In *Proceedings of the International Conference on Computing and Big Data (ICCBD)*, **2021**.  
+   [Paper](https://doi.org/10.1109/ICCBD53833.2021.00192)
+
+
+<span class="anchor" id="research-software"></span>
+
+# 💻 Research Software
+
+The following repositories provide research implementations and reproducibility code for my work on geohazards and hydrology. Please consult the individual repositories for their scope, data requirements, dependencies, and licensing.
+
+### DOME
+
+A dynamic optimization meta-ensemble framework for **regional debris-flow susceptibility assessment**, including model implementation and a pseudo-absence generation workflow.
+
+[Repository](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Zenodo archive](https://doi.org/10.5281/zenodo.16911533)
+
+### TabPFNv2.5-DebrisFlow
+
+Benchmarking **zero-shot TabPFN-2.5** against **10 Bayesian-optimised machine learning baselines** for catchment-scale debris-flow volume prediction using **60 samples** and repeated nested cross-validation.
+
+[Repository](https://github.com/zjusuge/TabPFNv2.5-DebrisFlow)
+
+### BWSD — Fengshuwan Case Study
+
+Lightweight reproducibility code for the core daily **Basin Water Storage Degree (BWSD)** calculation in the Fengshuwan catchment.
+
+[Repository](https://github.com/zjusuge/bwsd-fengshuwan-case)
+
+### HydroPIML-RS — Fengshuwan Case Study
+
+Lightweight reproducibility code for the **short-lead runoff and water-stage prediction** experiment in the Fengshuwan catchment.
+
+[Repository](https://github.com/zjusuge/hydropiml-rs-fengshuwan-case)
+
+
+<span class="anchor" id="patents"></span>
+
+# 💡 Patents and Patent Applications
 
 1. H. Sun, X. Wang, **Tianlong Wang**, R. Tang, R. Luo. *Monitoring and Early Warning Method and System for Rainfall-induced Debris Flow*. Japan, No. 2024-017304, **2024**.
 
-1. X. Wang, H. Sun, S. Shao, R. Luo, **Tianlong Wang**. *Early Warning and Mitigation Method for Debris Flow Disasters in Small Watersheds*. China, CN118262481A, **2024**.
+2. X. Wang, H. Sun, S. Shao, R. Luo, **Tianlong Wang**. *Early Warning and Mitigation Method for Debris Flow Disasters in Small Watersheds*. China, CN118262481A, **2024**.
 
-1. X. Wang, H. Sun, **Tianlong Wang**, R. Tang, R. Luo. *Monitoring and Early Warning Method and System for Rainfall-induced Landslides*. China, CN117854239A, **2024**.
+3. X. Wang, H. Sun, **Tianlong Wang**, R. Tang, R. Luo. *Monitoring and Early Warning Method and System for Rainfall-induced Landslides*. China, CN117854239A, **2024**.
 
-1. **Tianlong Wang**, H. Sun, Z. Chu, R. Luo, X. Wang. *Landslide Displacement Prediction Method Based on IVMD-IAO-BiLSTM*. China, CN116757323A, **2023**.
+4. **Tianlong Wang**, H. Sun, Z. Chu, R. Luo, X. Wang. *Landslide Displacement Prediction Method Based on IVMD-IAO-BiLSTM*. China, CN116757323A, **2023**.
 
-1. J. Liu, Z. Li, **Tianlong Wang**, et al. *Eccentric Hook-shaped Expansible Pre-stressed Anchoring Structure and Its Anchoring Method*. China, CN113718767B, **2023**.
+5. J. Liu, Z. Li, **Tianlong Wang**, et al. *Eccentric Hook-shaped Expansible Pre-stressed Anchoring Structure and Its Anchoring Method*. China, CN113718767B, **2023**.
 
-1. J. Liu, Z. Li, **Tianlong Wang**, et al. *Method for Repairing Dam Crack Defects Using Magnetic Mortar*. China, CN114396022A, **2022**.
+6. J. Liu, Z. Li, **Tianlong Wang**, et al. *Method for Repairing Dam Crack Defects Using Magnetic Mortar*. China, CN114396022A, **2022**.
 
-1. J. Liu, Q. Shi, Z. Wei, S. Li, L. Tang, **Tianlong Wang**, et al. *Device and Method for Obtaining the Position of Liquid Displacement Surface in Rock Cracks*. China, CN111595550B, **2022**.
+7. J. Liu, Q. Shi, Z. Wei, S. Li, L. Tang, **Tianlong Wang**, et al. *Device and Method for Obtaining the Position of Liquid Displacement Surface in Rock Cracks*. China, CN111595550B, **2022**.
 
-1. J. Liu, Q. Shi, Z. Wei, S. Li, L. Tang, **Tianlong Wang**, et al. *Pile Structure and Construction Method in Coral Sand Environment*. China, CN110886291B, **2021**.
-
-</div>
-</details>
+8. J. Liu, Q. Shi, Z. Wei, S. Li, L. Tang, **Tianlong Wang**, et al. *Pile Structure and Construction Method in Coral Sand Environment*. China, CN110886291B, **2021**.
 
 
 <span class="anchor" id="education"></span>
 
-# 🎓 Education
+# 🎓 Education & Research Training
 
-- **Zhejiang University**, China  
-  PhD Student, Ocean College  
-  September 2022 – June 2027 (expected)  
-  Supervisor: [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428)
+## Zhejiang University · China
 
-- **Nanyang Technological University**, Singapore  
-  Joint Doctoral Research Training, School of Civil and Environmental Engineering  
-  September 2024 – September 2026  
-  Host supervisor: [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian)
+**PhD Student, Ocean College**  
+September 2022 – June 2027 (expected)  
+Supervisor: [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428)
+
+## Nanyang Technological University · Singapore
+
+**Joint Doctoral Research Training, School of Civil and Environmental Engineering**  
+September 2024 – September 2026  
+Host supervisor: [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian)
 
 
 <span class="anchor" id="research-funding"></span>
 
-# 💼 Funding
+# 💼 Funding & Research Projects
 
-## 🎯 Individual Funding & Scholarships
+My doctoral research and training have received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
+
+## Individual Funding & Scholarships
 
 - **Young Elite Scientists Sponsorship Program — Doctoral Student Special Plan**  
   China Association for Science and Technology (CAST)  
   January 2025 – December 2026  
   Project ID: 156-O-170-0000603-2  
-  **Role: Principal Investigator**
+  Role: **Principal Investigator**
 
 - **Seed Fund Cultivation Project of Ocean College**  
   Zhejiang University  
   June 2025 – June 2027  
   Grant No. 2025BS004  
-  **Role: Principal Investigator**
+  Role: **Principal Investigator**
 
 - **Outstanding Doctoral Dissertation Award Cultivation Grant**  
   Zhejiang University  
   June 2025 – June 2026  
   Grant No. 825011A  
-  **Role: Principal Investigator**  
-  Completed; evaluated as Excellent.
+  Role: **Principal Investigator**  
+  Status: Completed; evaluated as **Excellent**.
 
 - **National Construction of High-Level Universities Program**  
   China Scholarship Council (CSC)  
   September 2024 – September 2026  
   Grant No. 202406320358  
-  **Role: Scholarship Recipient**
+  Role: **Scholarship Recipient**
 
 
-## 🤝 Collaborative Research Projects
+## Collaborative Research Projects
 
 - **Key Program of the National Natural Science Foundation of China**  
-  Early Forecasting and Disaster Control Methods for Debris Flows in Small Watersheds Based on Hydrodynamic Analysis  
+  *Early Forecasting and Disaster Control Methods for Debris Flows in Small Watersheds Based on Hydrodynamic Analysis*  
   Grant No. 42230702  
   Project period: January 2023 – December 2027  
-  **Role: Co-Investigator**
+  Role: **Co-Investigator**
 
 - **Young Scientists Fund of the National Natural Science Foundation of China**  
-  Research on Deformation Prediction Models and Instability Criterion Methods for Reservoir Bank Slopes Based on Copula Theory  
+  *Research on Deformation Prediction Models and Instability Criterion Methods for Reservoir Bank Slopes Based on Copula Theory*  
   Grant No. 51809151  
   Project period: January 2019 – December 2021  
-  **Role: Co-Investigator**
+  Role: **Co-Investigator**
 
 
 <span class="anchor" id="honors"></span>
 
-# 🏅 Honors
+# 🏅 Honors & Scholarships
 
 - **2025, 2021** — National Scholarship, China.
 - **2024** — Chinese Government Scholarship, China Scholarship Council.
 - **2023** — China Harbour Engineering Company (CHEC) Scholarship.
 - **2022** — Outstanding Graduate, City Underground Space Engineering Professional Committee, CSRME.
-
-<details>
-<summary>📂 Additional scholarships and honors</summary>
-<div markdown="1">
-
 - **2022** — Yunneng Electric Power Innovation Scholarship.
 - **2020** — Wang Shuopeng Scholarship.
 - **2019–2022** — First-Class Academic Scholarship, university level, four consecutive years.
 - **2019–2021** — National Encouragement Scholarship, three consecutive years.
 
-</div>
-</details>
-
-{% comment %}
-The following entry remains hidden pending verification.
-Confirm the awarding institution and the corresponding degree history
-before displaying it publicly.
-
-- **June 2022** — Outstanding Graduate, Zhejiang University.
-{% endcomment %}
-
 
 <span class="anchor" id="competitions"></span>
 
-# 🏆 Competitions
+# 🏆 Competition Awards
 
 - **November 2025 — Silver Award**  
   China International College Students' Innovation Competition, Singapore Regional.
@@ -232,24 +292,32 @@ before displaying it publicly.
 - **May 2024 — Bronze Award**  
   The 14th "Challenge Cup" Zhejiang Undergraduate Entrepreneurship Plan Competition, China.
 
+- **June 2023 — Silver Award**  
+  The 15th "Dandelion" University Student Entrepreneurship Competition, Zhejiang University.
+
+- **April 2022 — Honorable Mention**  
+  Interdisciplinary Contest in Modeling (MCM/ICM), USA.
+
+- **August 2021 — Second Prize**  
+  The 14th National University Student Social Practice and Science Contest on Energy Saving and Emission Reduction, China.
+
+- **July 2021 — First Prize (Regional) and Third Prize (National)**  
+  The 8th National Financial and Securities Investment Simulation Training Contest, China.
+
 - **June 2021 — Grand Prize**  
   The 3rd National College Student Structural Design Information Technology Competition, China.
 
-<details>
-<summary>📂 Additional competition awards</summary>
-<div markdown="1">
+- **May 2021 — Third Prize**  
+  The 13th "Challenge Cup" National Undergraduate Curricular Academic Science and Technology Works Conference (Hubei), China.
 
-- **June 2023 — Silver Award**, The 15th "Dandelion" University Student Entrepreneurship Competition, Zhejiang University.
-- **April 2022 — Honorable Mention**, Interdisciplinary Contest in Modeling (MCM/ICM), USA.
-- **August 2021 — Second Prize**, The 14th National University Student Social Practice and Science Contest on Energy Saving and Emission Reduction, China.
-- **July 2021 — First Prize (Regional) and Third Prize (National)**, The 8th National Financial and Securities Investment Simulation Training Contest, China.
-- **May 2021 — Third Prize**, The 13th "Challenge Cup" National Undergraduate Curricular Academic Science and Technology Works Conference (Hubei), China.
-- **February 2021 — Honorable Mention**, Mathematical Contest in Modeling (MCM/ICM), USA.
-- **November 2020 — Second Prize**, Contemporary Undergraduate Mathematical Contest in Modeling (Hubei), China.
-- **July 2020 — Third Prize**, The 5th National Construction College Construction Technology Application Skills Competition (Hubei), China.
+- **February 2021 — Honorable Mention**  
+  Mathematical Contest in Modeling (MCM/ICM), USA.
 
-</div>
-</details>
+- **November 2020 — Second Prize**  
+  Contemporary Undergraduate Mathematical Contest in Modeling (Hubei), China.
+
+- **July 2020 — Third Prize**  
+  The 5th National Construction College Construction Technology Application Skills Competition (Hubei), China.
 
 
 <span class="anchor" id="beyond-research"></span>
@@ -259,6 +327,8 @@ before displaying it publicly.
 Beyond research, I write poetry, enjoy fitness, and take part in community activities. My debut poetry collection, *Suganniran*, was published in China in **February 2025**.
 
 Research and poetry offer me different ways of looking closely at the world: one through models and evidence, the other through language and imagery.
+
+## Service, Leadership & Other Experience
 
 - **July–September 2023 — Intern**  
   China International Science and Technology Exchange Center, China Association for Science and Technology (CAST), Beijing, China.
@@ -273,3 +343,18 @@ Research and poetry offer me different ways of looking closely at the world: one
 
 - **June–July 2019 — Intern**  
   Yujing Tiandi Project, Kunfa Construction Co., Ltd., Yichang, China.
+
+
+<span class="anchor" id="contact"></span>
+
+# ✉️ Contact
+
+I welcome enquiries about **postdoctoral opportunities starting in 2027**, research collaborations, and the methods or software associated with my work.
+
+**Email:** [tianlong_wang@zju.edu.cn](mailto:tianlong_wang@zju.edu.cn)
+
+{% if page.cv_url and page.cv_url != "" %}
+**CV:** [Download PDF]({{ page.cv_url | relative_url }})
+{% endif %}
+
+[Google Scholar](https://scholar.google.com/citations?user=JNiHto0AAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Tianlong-Wang-7) · [ORCID](https://orcid.org/0000-0002-0598-5481) · [GitHub](https://github.com/zjusuge) · [LinkedIn](https://www.linkedin.com/in/tianlong-wang/)
