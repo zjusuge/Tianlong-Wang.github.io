@@ -1,0 +1,758 @@
+/* =========================================================
+   Tianlong Wang — Academic Homepage
+   Scoped visual enhancement for the existing homepage.
+   ========================================================= */
+
+/* ---------- Base ---------- */
+
+.tw-home {
+  --tw-text: #334155;
+  --tw-heading: #16324f;
+  --tw-muted: #526278;
+  --tw-blue: #1d4ed8;
+  --tw-teal: #0f766e;
+  --tw-violet: #6d28d9;
+  --tw-amber: #92400e;
+  --tw-rose: #9f3454;
+  --tw-line: #e2e8f0;
+  --tw-accent: #1d4ed8;
+  --tw-tint: #eff6ff;
+
+  color: var(--tw-text);
+  background: #ffffff;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.tw-home,
+.tw-home *,
+.tw-home *::before,
+.tw-home *::after {
+  box-sizing: border-box;
+}
+
+.tw-home h1,
+.tw-home h2,
+.tw-home h3 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.tw-home p {
+  margin: 0 0 1rem;
+}
+
+.tw-home p + p {
+  margin-top: 0;
+  text-indent: 0;
+}
+
+.tw-home strong {
+  color: var(--tw-heading);
+}
+
+.tw-home a {
+  color: var(--tw-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
+}
+
+.tw-home a:hover {
+  color: var(--tw-teal);
+}
+
+.tw-home a:focus-visible {
+  outline: 3px solid var(--tw-blue);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.tw-home [id] {
+  scroll-margin-top: 100px;
+}
+
+/* Neutralize the original theme's special About anchor offset. */
+
+.page__content .tw-home #about-me {
+  margin-top: 0;
+}
+
+.page__content .tw-home #about-me::before {
+  content: none;
+  display: none;
+}
+
+/* ---------- Sections and palette ---------- */
+
+.tw-home .tw-section {
+  margin-top: 2.8rem;
+}
+
+.tw-home .tw-section > h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin: 0 0 1.15rem;
+  padding-bottom: 0.65rem;
+  color: var(--tw-accent);
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--tw-line);
+}
+
+.tw-home .tw-section > h2::before {
+  content: "";
+  flex: 0 0 5px;
+  height: 1.05em;
+  align-self: center;
+  background: var(--tw-accent);
+  border-radius: 4px;
+}
+
+.tw-home h3 {
+  margin: 1.5rem 0 0.8rem;
+  color: var(--tw-heading);
+  font-size: 1.12rem;
+}
+
+.tw-home .tw-blue {
+  --tw-accent: #1d4ed8;
+  --tw-tint: #eff6ff;
+}
+
+.tw-home .tw-teal {
+  --tw-accent: #0f766e;
+  --tw-tint: #effbf8;
+}
+
+.tw-home .tw-violet {
+  --tw-accent: #6d28d9;
+  --tw-tint: #f6f2ff;
+}
+
+.tw-home .tw-amber {
+  --tw-accent: #92400e;
+  --tw-tint: #fff8e8;
+}
+
+.tw-home .tw-rose {
+  --tw-accent: #9f3454;
+  --tw-tint: #fff2f6;
+}
+
+.tw-home .tw-muted {
+  color: var(--tw-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Hero ---------- */
+
+.tw-home .tw-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.8rem;
+  background:
+    radial-gradient(circle at 100% 0%, #e3f5f1 0%, transparent 48%),
+    linear-gradient(135deg, #f0f6ff 0%, #ffffff 72%);
+  border: 1px solid #dce8f5;
+  border-radius: 22px;
+}
+
+.tw-home .tw-hero > * {
+  min-width: 0;
+}
+
+.tw-home .tw-eyebrow {
+  margin-bottom: 0.7rem;
+  color: var(--tw-teal);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.tw-home .tw-hero h1 {
+  margin: 0 0 0.85rem;
+  padding: 0;
+  color: var(--tw-heading);
+  font-size: clamp(1.9rem, 4vw, 2.65rem);
+  border: 0;
+}
+
+.tw-home .tw-hero-line {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.tw-home .tw-hero-line .tw-color-blue {
+  color: var(--tw-blue);
+}
+
+.tw-home .tw-hero-line .tw-color-teal {
+  color: var(--tw-teal);
+}
+
+.tw-home .tw-hero-line .tw-color-violet {
+  color: var(--tw-violet);
+}
+
+.tw-home .tw-affiliation {
+  color: var(--tw-muted);
+  font-size: 0.88rem;
+}
+
+.tw-home .tw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.tw-home .tw-tag {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  color: var(--tw-accent);
+  background: var(--tw-tint);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.tw-home .tw-hero-art {
+  margin: 0;
+}
+
+.tw-home .tw-hero-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tw-home .tw-hero-art figcaption {
+  margin-top: 0.4rem;
+  color: var(--tw-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ---------- Cards ---------- */
+
+.tw-home .tw-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.tw-home .tw-theme-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.tw-home .tw-card {
+  min-width: 0;
+  padding: 1.2rem;
+  background: var(--tw-tint);
+  border: 1px solid var(--tw-line);
+  border-top: 4px solid var(--tw-accent);
+  border-radius: 14px;
+}
+
+.tw-home .tw-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--tw-accent);
+  font-size: 1.03rem;
+  overflow-wrap: anywhere;
+}
+
+.tw-home .tw-card p {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.tw-home .tw-card p:last-child {
+  margin-bottom: 0;
+}
+
+.tw-home .tw-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.85rem;
+  color: var(--tw-accent);
+  background: #ffffff;
+  border: 1px solid var(--tw-line);
+  border-radius: 12px;
+}
+
+.tw-home .tw-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Postdoctoral notice ---------- */
+
+.tw-home .tw-notice {
+  margin: 1.4rem 0;
+  padding: 1.2rem 1.35rem;
+  background: linear-gradient(110deg, #eff6ff, #f0fdfa);
+  border: 1px solid #cbdff4;
+  border-left: 5px solid var(--tw-teal);
+  border-radius: 12px;
+}
+
+.tw-home .tw-notice h3 {
+  margin: 0 0 0.55rem;
+  color: var(--tw-teal);
+  font-size: 1.05rem;
+}
+
+.tw-home .tw-notice p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Links, buttons, navigation ---------- */
+
+.tw-home .tw-social,
+.tw-home .tw-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tw-home .tw-social {
+  margin: 1.2rem 0;
+}
+
+.tw-home .tw-button,
+.tw-home .tw-link-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.4rem 0.8rem;
+  color: var(--tw-blue);
+  background: #ffffff;
+  border: 1px solid #cbd8e8;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tw-home .tw-button:hover,
+.tw-home .tw-link-row a:hover {
+  color: var(--tw-teal);
+  background: #effbf8;
+  border-color: var(--tw-teal);
+  text-decoration: none;
+}
+
+.tw-home .tw-button-primary,
+.tw-home .tw-button-primary:hover {
+  color: #ffffff;
+  background: var(--tw-blue);
+  border-color: var(--tw-blue);
+}
+
+.tw-home .tw-page-nav {
+  margin: 1.3rem 0 0;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 1px solid var(--tw-line);
+  border-radius: 12px;
+}
+
+.tw-home .tw-nav-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--tw-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tw-home .tw-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+}
+
+.tw-home .tw-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.tw-home .tw-nav-links a:hover {
+  background: #eaf2ff;
+  text-decoration: underline;
+}
+
+/* ---------- Publications ---------- */
+
+.tw-home .tw-scholar-badge {
+  margin: 0.6rem 0 1.2rem;
+}
+
+.tw-home .tw-scholar-badge img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.tw-home .tw-publications ol {
+  margin: 0;
+  padding-left: 1.7rem;
+}
+
+.tw-home .tw-publications li {
+  margin: 0 0 0.85rem;
+  padding: 0.95rem 1rem;
+  background: #f8fbff;
+  border: 1px solid #e0eaf7;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.tw-home .tw-publications li::marker {
+  color: var(--tw-blue);
+  font-weight: 700;
+}
+
+.tw-home .tw-publications li strong {
+  color: #1e40af;
+}
+
+.tw-home .tw-publications li em {
+  color: var(--tw-teal);
+}
+
+.tw-home .tw-publications li p {
+  margin: 0;
+}
+
+.tw-home .tw-publications li a {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.22rem 0.5rem;
+  color: #1e40af;
+  background: #edf4ff;
+  border: 1px solid #cbdcf5;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.tw-home .tw-publications li a:hover {
+  color: var(--tw-teal);
+  background: #e7f7f1;
+  border-color: #a5d7c9;
+  text-decoration: underline;
+}
+
+/* ---------- Education timeline ---------- */
+
+.tw-home .tw-timeline {
+  margin: 1rem 0 0 0.5rem;
+  padding-left: 1.45rem;
+  border-left: 2px solid #cce4df;
+}
+
+.tw-home .tw-timeline-item {
+  position: relative;
+  margin-bottom: 1.6rem;
+  padding: 1rem 1.15rem;
+  background: #f4fbf9;
+  border: 1px solid #dceee8;
+  border-radius: 12px;
+}
+
+.tw-home .tw-timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 1.4rem;
+  left: calc(-1.45rem - 8px);
+  width: 12px;
+  height: 12px;
+  background: var(--tw-teal);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #94cbbd;
+}
+
+.tw-home .tw-timeline-item h3 {
+  margin: 0 0 0.6rem;
+  color: var(--tw-teal);
+}
+
+.tw-home .tw-timeline-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Funding and honors ---------- */
+
+.tw-home .tw-funding ul,
+.tw-home .tw-honors ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-home .tw-funding li,
+.tw-home .tw-honors li {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: var(--tw-tint);
+  border: 1px solid var(--tw-line);
+  border-left: 4px solid var(--tw-accent);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.tw-home .tw-funding li p,
+.tw-home .tw-honors li p {
+  margin: 0;
+}
+
+.tw-home .tw-funding li strong,
+.tw-home .tw-honors li strong {
+  color: var(--tw-accent);
+}
+
+/* ---------- Patents ---------- */
+
+.tw-home .tw-patents ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.tw-home .tw-patents li {
+  margin-bottom: 0.9rem;
+  padding: 0.25rem 0 0.9rem 0.25rem;
+  border-bottom: 1px dashed #ddd8ed;
+  font-size: 0.92rem;
+}
+
+.tw-home .tw-patents li::marker,
+.tw-home .tw-patents li strong {
+  color: var(--tw-violet);
+}
+
+.tw-home .tw-patents li:last-child {
+  border-bottom: 0;
+}
+
+/* ---------- Competition and service timelines ---------- */
+
+.tw-home .tw-competitions ul,
+.tw-home .tw-service ul {
+  margin: 0 0 0 0.4rem;
+  padding: 0 0 0 1.4rem;
+  list-style: none;
+  border-left: 2px solid var(--tw-line);
+}
+
+.tw-home .tw-competitions li,
+.tw-home .tw-service li {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 0.7rem 1rem;
+  background: var(--tw-tint);
+  border: 1px solid var(--tw-line);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.tw-home .tw-competitions li::before,
+.tw-home .tw-service li::before {
+  content: "";
+  position: absolute;
+  top: 1.05rem;
+  left: calc(-1.4rem - 7px);
+  width: 10px;
+  height: 10px;
+  background: var(--tw-accent);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--tw-accent);
+}
+
+.tw-home .tw-competitions li strong,
+.tw-home .tw-service li strong {
+  color: var(--tw-accent);
+}
+
+.tw-home .tw-competitions li p,
+.tw-home .tw-service li p {
+  margin: 0;
+}
+
+/* ---------- Beyond research and contact ---------- */
+
+.tw-home .tw-poetry {
+  padding: 1.3rem 1.4rem;
+  background: linear-gradient(120deg, #fff2f6, #fcf8ff);
+  border: 1px solid #efdae3;
+  border-radius: 14px;
+}
+
+.tw-home .tw-poetry p:last-child {
+  margin-bottom: 0;
+  color: #764257;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.tw-home .tw-contact-box {
+  padding: 1.35rem;
+  background: linear-gradient(120deg, #eff6ff, #effbf8);
+  border: 1px solid #d5e6ed;
+  border-radius: 14px;
+}
+
+.tw-home .tw-contact-box p:last-child {
+  margin-bottom: 0;
+}
+
+.tw-home .tw-back-top {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .tw-home .tw-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-home .tw-hero-art {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .tw-home .tw-hero {
+    gap: 1rem;
+    padding: 1.15rem;
+    border-radius: 16px;
+  }
+
+  .tw-home .tw-grid,
+  .tw-home .tw-theme-grid,
+  .tw-home .tw-funding ul,
+  .tw-home .tw-honors ul {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-home .tw-section {
+    margin-top: 2.2rem;
+  }
+
+  .tw-home .tw-section > h2 {
+    font-size: 1.3rem;
+  }
+
+  .tw-home .tw-publications ol {
+    padding-left: 1.3rem;
+  }
+
+  .tw-home .tw-publications li {
+    padding: 0.8rem;
+  }
+
+  .tw-home .tw-card,
+  .tw-home .tw-notice,
+  .tw-home .tw-contact-box {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-home *,
+  .tw-home *::before,
+  .tw-home *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .tw-home {
+    color: #111111;
+    font-size: 10pt;
+  }
+
+  .tw-home .tw-page-nav,
+  .tw-home .tw-back-top,
+  .tw-home .tw-hero-art,
+  .tw-home .tw-scholar-badge {
+    display: none;
+  }
+
+  .tw-home .tw-hero,
+  .tw-home .tw-grid,
+  .tw-home .tw-funding ul,
+  .tw-home .tw-honors ul {
+    display: block;
+  }
+
+  .tw-home .tw-card,
+  .tw-home .tw-notice,
+  .tw-home .tw-publications li,
+  .tw-home .tw-timeline-item,
+  .tw-home .tw-funding li,
+  .tw-home .tw-honors li,
+  .tw-home .tw-competitions li,
+  .tw-home .tw-service li,
+  .tw-home .tw-poetry,
+  .tw-home .tw-contact-box {
+    margin-bottom: 0.7rem;
+    background: #ffffff;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .tw-home h2,
+  .tw-home h3 {
+    break-after: avoid;
+  }
+}
