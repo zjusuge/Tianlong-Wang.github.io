@@ -138,7 +138,7 @@ Citation metrics:
 
 - **Nanyang Technological University**, Singapore  
   Joint Doctoral Research Training, School of Civil and Environmental Engineering  
-  September 2024 – September 2026 (scheduled completion)  
+  September 2024 – September 2026  
   Host supervisor: [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian)
 
 
