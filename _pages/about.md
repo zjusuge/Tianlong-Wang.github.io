@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning."
+excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning. Seeking postdoctoral opportunities in 2027."
 author_profile: true
 show_postdoc_notice: true
 cv_url: ""
@@ -24,20 +24,24 @@ redirect_from:
 
 I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. I am supervised by [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428) at ZJU and hosted by [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian) at NTU. I expect to complete my PhD in **June 2027**.
 
-My research connects **geohazard prediction, hydrological modelling, and machine learning**, with a particular focus on **debris flows and landslides**. From water moving through a catchment to slope deformation and debris-flow motion, I investigate how environmental observations and physical knowledge can improve our understanding and prediction of hazardous processes.
-
-I develop **physics-informed and explainable learning methods** for regional susceptibility assessment, debris-flow characteristics, landslide displacement, and hydrological prediction. Across these applications, I focus on three questions: how to incorporate physical knowledge into learning, how to interpret model predictions, and how to evaluate generalization beyond the training data.
-
-> **My goal is to make geohazard predictions not only more accurate, but also more physically grounded, interpretable, and useful for early warning and disaster mitigation.**
-
-My doctoral research has received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
-
-I welcome research discussions and collaborations on geohazards, hydrology, and physics-informed and explainable machine learning.
-
 {% if page.show_postdoc_notice %}
-> **Postdoctoral opportunities — 2027**  
-> I am seeking postdoctoral opportunities following my expected PhD completion in **June 2027**. I would be pleased to discuss opportunities related to geohazards, hydrological modelling, and physics-informed and explainable machine learning.
+> **🔎 Seeking postdoctoral opportunities — 2027**  
+> I am seeking postdoctoral opportunities following my expected PhD completion in **June 2027**. My research interests include **geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning**. I welcome discussions with prospective supervisors and research groups. Please [contact me by email](mailto:tianlong_wang@zju.edu.cn) to explore potential opportunities.
 {% endif %}
+
+My research connects **geohazards, hydrology, and machine learning**, with a particular focus on **debris flows and landslides**. I investigate how environmental observations and physical knowledge can improve the prediction of hazardous processes, from water moving through a catchment to slope deformation and debris-flow motion.
+
+My work spans **regional susceptibility assessment, debris-flow characteristics, landslide displacement, and hydrological prediction**, with three central themes:
+
+- **Physics-informed learning:** incorporating physical knowledge into data-driven models.
+- **Explainable prediction:** interpreting model outputs and examining the contributions of environmental factors.
+- **Model generalization:** evaluating predictive performance beyond the training data.
+
+My goal is to develop predictions that are **accurate, physically grounded, and interpretable**, supporting early warning and disaster mitigation.
+
+My doctoral research and training have received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
+
+I welcome research discussions and collaborations across these areas.
 
 {% if page.cv_url and page.cv_url != "" %}
 **[Download CV (PDF)]({{ page.cv_url | relative_url }})**
@@ -46,7 +50,7 @@ I welcome research discussions and collaborations on geohazards, hydrology, and 
 [Email](mailto:tianlong_wang@zju.edu.cn) · [Google Scholar](https://scholar.google.com/citations?user=JNiHto0AAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Tianlong-Wang-7) · [ORCID](https://orcid.org/0000-0002-0598-5481) · [GitHub](https://github.com/zjusuge) · [LinkedIn](https://www.linkedin.com/in/tianlong-wang/)
 
 Citation metrics:
-<a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ"><img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="Google Scholar citation count" loading="lazy"></a>
+<a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ"><img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&amp;logo=Google%20Scholar&amp;labelColor=f6f6f6&amp;color=9cf&amp;style=flat&amp;label=citations" alt="Google Scholar citation count" loading="lazy"></a>
 
 
 <span class="anchor" id="publications"></span>
@@ -207,8 +211,9 @@ Citation metrics:
 </details>
 
 {% comment %}
-The following entry is retained for verification before publication.
-Confirm the awarding institution and the corresponding degree history.
+The following entry remains hidden pending verification.
+Confirm the awarding institution and the corresponding degree history
+before displaying it publicly.
 
 - **June 2022** — Outstanding Graduate, Zhejiang University.
 {% endcomment %}
