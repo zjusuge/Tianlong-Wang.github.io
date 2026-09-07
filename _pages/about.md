@@ -1,9 +1,9 @@
 ---
 permalink: /
 title: ""
-excerpt: "Tianlong Wang is a PhD student at Zhejiang University working on physics-informed and explainable machine learning for debris flows, landslides, and hydrological prediction."
+excerpt: "Tianlong Wang — geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning."
 author_profile: true
-show_postdoc_notice: true
+show_postdoc_notice: false
 cv_url: ""
 redirect_from:
   - /about/
@@ -22,15 +22,21 @@ redirect_from:
 
 # 👋 About Me
 
-I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. My expected PhD completion date is **June 2027**.
+I am a **PhD student at Zhejiang University (ZJU)**, with joint doctoral research training at **Nanyang Technological University (NTU)**. I am supervised by [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428) at ZJU and hosted by [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian) at NTU. I expect to complete my PhD in **June 2027**.
 
-My research focuses on **physics-informed and explainable machine learning for geohazards**, particularly debris flows and landslides. I develop predictive models for hazard susceptibility, debris-flow characteristics, landslide displacement, and hydrological processes, with the broader goal of supporting early warning and disaster mitigation.
+My research brings together **geohazard modelling, hydrology, and machine learning**, with a particular focus on **debris flows and landslides**. From water moving through a catchment to the deformation of a slope and the motion of a debris flow, I study how environmental observations and physical knowledge can inform predictions of hazardous processes.
 
-My doctoral supervisor at ZJU is [Prof. Hongyue Sun](https://person.zju.edu.cn/0096428), and my host supervisor at NTU is [Prof. Chu Jian](https://dr.ntu.edu.sg/entities/person/Chu-Jian).
+I develop **physics-informed and explainable learning methods** for regional susceptibility assessment, debris-flow characteristics, landslide displacement, and hydrological prediction. Across these problems, I focus on three questions: how to incorporate physical knowledge into learning, what drives a model's predictions, and how reliably it performs beyond its training data.
+
+> **My goal is to make geohazard predictions not only more accurate, but also more physically grounded, interpretable, and useful for early warning and disaster mitigation.**
+
+My doctoral research has received support from the **China Association for Science and Technology (CAST)**, the **China Scholarship Council (CSC)**, and **Zhejiang University**.
+
+I welcome research discussions and collaborations on geohazard prediction, hydrological modelling, and physics-informed and explainable machine learning.
 
 {% if page.show_postdoc_notice %}
 > **Postdoctoral opportunities — 2027**  
-> I am seeking postdoctoral opportunities starting in 2027, following my expected PhD completion in June. I welcome discussions on geohazard prediction, physics-informed machine learning, explainable AI, and hydrological modelling.
+> I am seeking postdoctoral opportunities following my expected PhD completion in **June 2027**. I would be pleased to discuss opportunities related to geohazards, hydrological modelling, and physics-informed and explainable machine learning.
 {% endif %}
 
 {% if page.cv_url and page.cv_url != "" %}
@@ -43,53 +49,15 @@ Publication and citation metrics are available on
 <a href="https://scholar.google.com/citations?user=JNiHto0AAAAJ">Google Scholar <img src="https://img.shields.io/endpoint?url={{ scholarStatsUrl | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="Google Scholar citation count" loading="lazy"></a>.
 
 
-<span class="anchor" id="research"></span>
-
-# 🔬 Selected Research
-
-## DOME: Regional debris-flow susceptibility assessment
-
-A dynamic meta-ensemble framework combining learner selection, out-of-fold stacking, calibration, and blocked spatial validation. The framework produces **relative susceptibility scores** and integrates exposure information separately for management-oriented screening.
-
-**Publication:** Natural Hazards, 2026  
-[Paper](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Code archive](https://doi.org/10.5281/zenodo.16911533)
-
-## Physics-informed prediction of post-seismic debris-flow source volumes
-
-A physics-informed generative deep learning framework for estimating debris-flow source volumes in post-seismic environments.
-
-**Publication:** Georisk, 2026  
-[Paper](https://doi.org/10.1080/17499518.2026.2651228)
-
-## Explainable prediction of debris-flow velocity
-
-A multi-strategy stacking ensemble approach for debris-flow velocity prediction, with model explanations to examine the contributions of influencing factors.
-
-**Publication:** Journal of Hydrology, 2024  
-[Paper](https://doi.org/10.1016/j.jhydrol.2024.131347)
-
-
-<span class="anchor" id="news"></span>
-
-# 🔥 News
-
-- **2026.07** — Our DOME framework was published in *Natural Hazards*.
-- **2026.01** — Our SWAT–ML–SHAP study of land-use effects on watershed hydrological processes was published online in *Earth Science*.
-- **2025.11** — Received a Silver Award in the Singapore Regional of the China International College Students' Innovation Competition.
-- **2025.07** — Selected for the Outstanding Doctoral Dissertation Award cultivation program at Zhejiang University.
-- **2024.12** — Selected for the Young Elite Scientists Sponsorship Program by CAST, Doctoral Student Special Plan.
-- **2024.09** — Started joint doctoral research training at Nanyang Technological University.
-
-
 <span class="anchor" id="publications"></span>
 
-# 📝 Publications
+# Publications
 
-**My name is highlighted in bold. An asterisk (\*) denotes a corresponding author.**
+**My name is highlighted in bold; an asterisk (\*) indicates a corresponding author.** Links to papers, code, data, and archived releases are included where available.
 
 ## Journal Articles
 
-1. **Tianlong Wang**\*, H. Yang. DOME: a dynamic optimization meta-ensemble framework for debris-flow susceptibility assessment with SHAP-based interpretation. *Natural Hazards*, **122**, Article 545, **2026**. [DOI](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment)
+1. **Tianlong Wang**\*, H. Yang. DOME: a dynamic optimization meta-ensemble framework for debris-flow susceptibility assessment with SHAP-based interpretation. *Natural Hazards*, **122**, Article 545, **2026**. [DOI](https://doi.org/10.1007/s11069-026-08307-2) · [Code](https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment) · [Code archive](https://doi.org/10.5281/zenodo.16911533)
 
 1. **Tianlong Wang**, H. Yang, H. Sun\*. Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative Deep Learning Framework. *Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards*, 1–29, **2026**. [DOI](https://doi.org/10.1080/17499518.2026.2651228)
 
@@ -157,7 +125,7 @@ A multi-strategy stacking ensemble approach for debris-flow velocity prediction,
 
 <span class="anchor" id="education"></span>
 
-# 📖 Education
+# Education & Research Training
 
 - **Zhejiang University**, China  
   PhD Student, Ocean College  
@@ -172,9 +140,9 @@ A multi-strategy stacking ensemble approach for debris-flow velocity prediction,
 
 <span class="anchor" id="research-grants"></span>
 
-# 🔍 Research Funding & Fellowships
+# Research Funding & Scholarships
 
-## Individual Research Funding and Fellowship Support
+## Individual Funding & Scholarships
 
 - **Young Elite Scientists Sponsorship Program — Doctoral Student Special Plan**  
   China Association for Science and Technology (CAST)  
@@ -201,6 +169,7 @@ A multi-strategy stacking ensemble approach for debris-flow velocity prediction,
   Grant No. 202406320358  
   **Role: Scholarship Recipient**
 
+
 ## Collaborative Research Projects
 
 - **Key Program of the National Natural Science Foundation of China**  
@@ -218,7 +187,7 @@ A multi-strategy stacking ensemble approach for debris-flow velocity prediction,
 
 <span class="anchor" id="honors"></span>
 
-# ⭐ Honors
+# Honors & Awards
 
 - **2025, 2021** — National Scholarship, China.
 - **2024** — Chinese Government Scholarship, China Scholarship Council.
@@ -247,7 +216,7 @@ Confirm the awarding institution and the corresponding degree history.
 
 <span class="anchor" id="competitions"></span>
 
-# 🏆 Competitions
+# Competition Awards
 
 - **2025.11 — Silver Award**  
   China International College Students' Innovation Competition, Singapore Regional.
@@ -280,9 +249,11 @@ Confirm the awarding institution and the corresponding degree history.
 
 <span class="anchor" id="misc"></span>
 
-# 🧩 Beyond Research
+# Beyond Research
 
-I also write poetry and enjoy fitness and community engagement. My debut poetry collection, *Suganniran*, was published in China in **February 2025**.
+Beyond research, I write poetry, enjoy fitness, and take part in community activities. My debut poetry collection, *Suganniran*, was published in China in **February 2025**.
+
+Research and poetry offer me different ways of looking closely at the world: one through models and evidence, the other through language and imagery.
 
 - **July–September 2023 — Intern**  
   China International Science and Technology Exchange Center, China Association for Science and Technology (CAST), Beijing, China.
