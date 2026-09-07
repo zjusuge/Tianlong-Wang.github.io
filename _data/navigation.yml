@@ -1,25 +1,22 @@
-# main links
+# Main navigation
 main:
   - title: "About"
     url: "/#about-me"
 
-  - title: "News"
-    url: "/#news"
-
-  - title: "Education"         
-    url: "/#education"
-
-  - title: "Research Grants"    
-    url: "/#research-grants"
-
   - title: "Publications"
     url: "/#publications"
 
-  - title: "Competitions"     
-    url: "/#competitions"
+  - title: "Education"
+    url: "/#education"
 
-  - title: "Honors"            
+  - title: "Funding"
+    url: "/#research-funding"
+
+  - title: "Honors"
     url: "/#honors"
 
-  - title: "Misc"             
-    url: "/#misc"
+  - title: "Competitions"
+    url: "/#competitions"
+
+  - title: "Beyond Research"
+    url: "/#beyond-research"
