@@ -35,9 +35,13 @@
 这是格式示例，请替换 DOI 和仓库地址后再提交。没有公开链接时写 `links: []`，删除示例的 `links` 列表。
 
 - `authors` 是普通文字；名字写为 `Tianlong Wang` 会自动加粗，`*` 会显示为通讯作者标记。只按论文原文标记作者身份。
-- `topic` 可选 `Debris flows`、`Hydrology`、`Geotechnics`、`Other`；会议论文的 `type` 为 `Conference paper`。
+- `topic` 可选 `Debris flows`、`Hydrology`、`Geotechnics`、`Algorithms`；会议论文的 `type` 为 `Conference paper`。
 - 在审/准备中的研究放在 `_data/home.yml` 的 `ongoing` 中，不放进已发表列表。
 - 要更换三篇代表作，修改 `_data/home.yml` 的 `selected`。`paper_id` 必须对应论文的 `id`；同时更新代表作标题、年份和期刊说明。
+- 代表作图片放在 `images/research/`，用 `figure` 指向图片，`figure_caption` 写图名与原文图号，`figure_alt` 写图片描述。图片完整显示，支持点击放大。
+- 教育与导师链接在 `_data/education.yml`，`supervisor_url` 为学校个人主页。主页与 CV 共用数据，目前只展示浙大博士和 NTU 联培经历。
+- 审稿期刊在 `_data/service.yml` 的 `reviewing` 中新增一行，主页与 CV 会同步更新。
+- 诗歌网站位于 `/poetry/`；作品维护见 [诗歌网站维护说明](POETRY-zh.md)。
 - 不需要复制论文 PDF 到网站。使用 DOI 链接即可；只有确认可公开分享的版本才添加 PDF 链接。
 
 ## 增加基金或项目

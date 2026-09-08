@@ -18,7 +18,7 @@ for paper in data['publications']:
     ids.add(paper['id'])
     require(isinstance(paper['year'],int),'Year must be a number')
     require(paper['type'] in ['Journal article','Conference paper'],'Invalid publication type')
-    require(paper['topic'] in ['Debris flows','Hydrology','Geotechnics','Other'],'Invalid subject')
+    require(paper['topic'] in ['Debris flows','Hydrology','Geotechnics','Algorithms'],'Invalid subject')
     for link in paper['links']:
         require(link['url'].startswith('https://'),'Publication links must use HTTPS')
         if 'doi.org/' in link['url']:
@@ -33,6 +33,17 @@ for project in data['software']:
     for key in ['name','category','description','tags','links']:require(bool(project.get(key)),f'Missing software field: {key}')
     require(any('github.com/' in x['url'] for x in project['links']),f'Missing repository: {project["name"]}')
 require(isinstance(data['profile']['seeking_postdoc'],bool),'seeking_postdoc must be true or false')
+poems=[yaml.safe_load(p.read_text(encoding='utf-8').split('---',2)[1]) for p in (ROOT/'_poems').glob('*.md')]
+poem_urls=set()
+for poem in poems:
+    for key in ['title','book','order','permalink','verse','chapter','form']:require(bool(poem.get(key)),f'Missing poem field: {key}')
+    require(poem['permalink'] not in poem_urls,'Duplicate poem URL')
+    poem_urls.add(poem['permalink'])
+    require(poem['book'] in [b['id'] for b in data['poetry']['books']],'Unknown poetry collection')
+for book in data['poetry']['books']:
+    orders=sorted(p['order'] for p in poems if p['book']==book['id'])
+    require(orders==list(range(1,len(orders)+1)),f'Non-contiguous poem order: {book["id"]}')
+for title in data['poetry']['featured_titles']:require(any(p['title']==title for p in poems),f'Missing featured poem: {title}')
 
 class Page(HTMLParser):
     def __init__(self):super().__init__();self.ids=[];self.links=[];self.scripts=[];self.json_mode=False
@@ -50,7 +61,9 @@ class Page(HTMLParser):
 
 if len(sys.argv)>1:
     build=Path(sys.argv[1])
-    for target in ['index.html','cv/index.html']:
+    targets=['index.html','cv/index.html']+[str(p.relative_to(build)) for p in (build/'poetry').rglob('*.html')]
+    require((build/'poetry/index.html').exists(),'Poetry homepage missing')
+    for target in targets:
         p=Page();html=(build/target).read_text(encoding='utf-8');p.feed(html)
         require(len(p.ids)==len(set(p.ids)),f'Duplicate HTML ids in {target}')
         require('{{' not in html and '{%' not in html,f'Unrendered template in {target}')
@@ -59,6 +72,6 @@ if len(sys.argv)>1:
             if href.startswith('#'):require(unquote(href[1:]) in p.ids,f'Broken anchor: {href}')
             elif href.startswith('/') and not href.startswith('//'):
                 path=build/unquote(urlparse(href).path).lstrip('/')
-                if href.endswith('/'):path=path/'index.html'
+                if urlparse(href).path.endswith('/'):path=path/'index.html'
                 require(path.exists(),f'Missing asset/page: {href}')
 print(f'PASS: {len(ids)} publications, {len(data["funding"])} grants, {len(data["software"])} software projects; selected references valid.')

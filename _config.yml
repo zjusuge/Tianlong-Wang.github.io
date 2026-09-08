@@ -14,7 +14,7 @@
 
 title: "Tianlong Wang"
 
-description: "Debris-flow monitoring, forecasting and mitigation in small catchments through hydrology and physics-informed machine learning."
+description: "Physics-informed and explainable AI for geohazard forecasting across debris flows, landslides, hydrology and geotechnics."
 
 repository: "zjusuge/zjusuge.github.io"
 
@@ -173,6 +173,9 @@ sass:
 # ============================================================
 
 permalink: /:categories/:title/
+collections:
+  poems:
+    output: true
 timezone: Asia/Shanghai
 
 

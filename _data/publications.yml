@@ -26,8 +26,8 @@
   authors: Tianlong Wang, H. Yang, H. Sun*
 - id: paper-swat
   year: 2026
-  title: 'Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP
-    Model: A Case Study of Fenshuijiang River Basin'
+  title: 'Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP Model:
+    A Case Study of Fenshuijiang River Basin'
   venue: Earth Science.
   type: Journal article
   topic: Hydrology
@@ -50,8 +50,8 @@
   authors: H. Yang, Tianlong Wang*, N. I. Fomin, S. Xiao, L. Liu
 - id: paper-5
   year: 2025
-  title: 'A novel method for predicting debris flow hazard: a multi-strategy fusion approach based
-    on the light gradient boosting machine framework'
+  title: 'A novel method for predicting debris flow hazard: a multi-strategy fusion approach based on
+    the light gradient boosting machine framework'
   venue: Stochastic Environmental Research and Risk Assessment, 39, 4867–4890.
   type: Journal article
   topic: Debris flows
@@ -61,8 +61,8 @@
   authors: Tianlong Wang, Q. Ge, T. Ma, et al.
 - id: paper-drainage
   year: 2025
-  title: 3D Numerical Simulation of the Shortest Length of a Blocking Section for a Self-Starting
-    Drainage Method
+  title: 3D Numerical Simulation of the Shortest Length of a Blocking Section for a Self-Starting Drainage
+    Method
   venue: International Journal of Geomechanics
   type: Journal article
   topic: Geotechnics
@@ -72,19 +72,19 @@
   authors: X. Wang, Q. Ge, K. Zhang, Tianlong Wang, T. Ma, H. Sun
 - id: paper-calibration
   year: 2025
-  title: Multi-parameter Calibration Method and Application of Constitutive Model Based on Improved
-    Dung Beetle Optimization Algorithm
+  title: Multi-parameter Calibration Method and Application of Constitutive Model Based on Improved Dung
+    Beetle Optimization Algorithm
   venue: Journal of Disaster Prevention and Mitigation Engineering, 45(5), 1014–1023. (In Chinese)
   type: Journal article
-  topic: Geotechnics
+  topic: Algorithms
   links:
   - label: DOI
     url: https://doi.org/10.13409/j.cnki.jdpme.20250224001
   authors: P. Lu, Y. Yu*, S. Liu, Tianlong Wang, Z. Xu
 - id: paper-velocity
   year: 2024
-  title: Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking
-    ensemble learning model
+  title: Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking ensemble
+    learning model
   venue: Journal of Hydrology, 638, 131347.
   type: Journal article
   topic: Debris flows
@@ -138,7 +138,9 @@
   venue: Chinese Journal of Underground Space and Engineering, 18(6), 1891–1897. (In Chinese)
   type: Journal article
   topic: Geotechnics
-  links: []
+  links:
+  - label: DOI
+    url: https://doi.org/10.20174/j.juse.2022.06.016
   authors: X. Xu, X. Lei, Tianlong Wang, G. Kong*, C. Li
 - id: paper-10
   year: 2021
@@ -146,7 +148,7 @@
     River Basin'
   venue: Scientific Research and Reviews, 14, 122.
   type: Journal article
-  topic: Other
+  topic: Algorithms
   links:
   - label: DOI
     url: https://doi.org/10.28933/srr-2021-03-1005
@@ -156,7 +158,7 @@
   title: Carbon emission forecast of China Transport Industry Based on Grey - Markov
   venue: International Conference on Computing and Big Data (ICCBD).
   type: Conference paper
-  topic: Other
+  topic: Algorithms
   links:
   - label: DOI
     url: https://doi.org/10.1109/ICCBD53833.2021.00192
@@ -176,7 +178,7 @@
   title: Optimization of Task Pricing Based on Multiple Regression Analysis and Game Theory
   venue: Journal of eSciences, 3, 9.
   type: Journal article
-  topic: Other
+  topic: Algorithms
   links:
   - label: DOI
     url: https://doi.org/10.28933/esciences-2020-01-1805
@@ -186,7 +188,7 @@
   title: Predicting Traffic Congestion Time Based on Kalman Filter Algorithm
   venue: Advances in Research and Reviews, 1, 7.
   type: Journal article
-  topic: Other
+  topic: Algorithms
   links:
   - label: DOI
     url: https://doi.org/10.28933/arr-2020-06-2205

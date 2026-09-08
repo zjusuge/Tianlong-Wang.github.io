@@ -1,4 +1,3 @@
-# Set seeking_postdoc to false when the search is over.
 name: Tianlong Wang
 name_zh: 王天龙
 role: PhD Student · Zhejiang University
@@ -6,6 +5,8 @@ training: Joint doctoral research training · Nanyang Technological University
 email: tianlong_wang@zju.edu.cn
 seeking_postdoc: true
 graduation: June 2027
-opportunity_title: "Seeking international postdoctoral opportunities"
-opportunity_text: "I am actively seeking a postdoctoral position following my expected PhD completion in June 2027. I would be excited to contribute to a group working on geohazards, hydrology or physics-informed AI."
-contact_subject: "Postdoctoral opportunity · 2027 · Tianlong Wang"
+opportunity_title: Seeking international postdoctoral opportunities
+opportunity_text: I am actively seeking an international postdoctoral position after my expected PhD completion
+  in June 2027. I welcome interdisciplinary opportunities across geohazards, geotechnics, geology, hydrology
+  and machine learning, especially applications of physics-informed and explainable AI.
+contact_subject: Postdoctoral opportunity · 2027 · Tianlong Wang
