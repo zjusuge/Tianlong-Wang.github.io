@@ -1,0 +1,93 @@
+realtime_endpoint: ''
+curation_note: AI 预先阅读选取的原诗片段，逐字核对；点击时从句库抽取，不实时调用模型。
+curated:
+- poem: p-458a4af7cc
+  excerpt: |-
+    风扫残云飞絮舞，霜侵老树铁枝崇。
+    何时共醉春风里，纵笔千秋画梦中。
+- poem: p-99e0ddbbe3
+  excerpt: |-
+    世间风雨难摇志，岁月波澜易染颜。
+    待到沧桑皆历尽，共揽星辰天地宽。
+- poem: p-007f013e3f
+  excerpt: |-
+    衣净斜阳暮，骑驴入翠微。
+    风尘千里过，溪影共人归。
+- poem: p-2e1b1f10f9
+  excerpt: 草木风犹语，山水梦还生。
+- poem: p-c14fd10417
+  excerpt: 山川环画屏，风物生新稿。
+- poem: p-1f3e6f66fa
+  excerpt: |-
+    旧友相逢杯里醉，乡亭遥望月初临。
+    但愿年岁常如是，一片天真寄此心。
+- poem: p-b703beef0d
+  excerpt: |-
+    杯里微波摇月色，窗前薄雾覆云峰。
+    何时共醉梅花下，共踏天涯寄远鸿。
+- poem: p-fe37c3e8aa
+  excerpt: |-
+    四两拨云千钧力，孤帆破浪逐东流。
+    星辰伴我离乡路，天际同瞻共一眸。
+- poem: p-466b858c6b
+  excerpt: |-
+    巷底惊闻香未寒，街头犹忆故人茶。
+    六年风雨人何在，一碗江城慰离怀。
+- poem: p-c3e928803a
+  excerpt: |-
+    桂影浮云外，风吹玉露生。
+    清歌随月远，夜静入孤城。
+- poem: p-f99c06c210
+  excerpt: |-
+    人间山水觅香踪，柴火轻烟绕翠峰。
+    三味炉中惊舌梦，几杯醉里忆初衷。
+- poem: p-07c0e6a076
+  excerpt: |-
+    酒醒书犹叠，诗成气未消。
+    朝霞添逸兴，暮雨洗喧嚣。
+- poem: p-cdae48e1a9
+  excerpt: 杯斟往事情犹暖，席对新知意自明。
+- poem: p-e290b8ee57
+  excerpt: |-
+    烟柳轻扬云霭散，花香满径燕双飞。
+    天边一抹斜阳影，万古风流逐浪追。
+- poem: p-32cda07a64
+  excerpt: |-
+    雨初晴，风正好，柳色摇烟，樟叶新芽早。
+    田父插秧溪畔笑，稚子追游，踏浪攀青草。
+- poem: p-6c7d49ddf1
+  excerpt: |-
+    椰影映风柔，花影清香映水幽。
+    雨后长桥添静意，闲游，五族同聚一桥头。
+- poem: p-26fbe2cfe0
+  excerpt: |-
+    万里潮声环玉垒，千秋江气接襄樊。
+    凭栏谁与登高处，独揽乾坤入梦长。
+- poem: p-d44f9cd11d
+  excerpt: |-
+    临襟遗醉笑频传，座上琼浆味自鲜。
+    欲问荆山何处福，杯中欢语满春天。
+- poem: p-a7cefeb048
+  excerpt: |-
+    口福食堂里
+    餐桌一次次被晚风撤走
+    话语在碗碟间冷却又加热
+    碰过几回杯
+    地图就缺了一格
+- poem: p-71bddfb7bc
+  excerpt: |-
+    街道被雨水切割成碎片
+    像一封撕开的信
+    字迹模糊，难以读懂
+- poem: p-e6bd1333dd
+  excerpt: |-
+    风穿过湿地
+    撩动水草的长发
+- poem: p-64ab0a822f
+  excerpt: |-
+    我所憧憬的是流水
+    她不争不止，温柔无畏
+- poem: p-d65f67ec47
+  excerpt: |-
+    I was born beneath the weight of water,
+    where the world was nothing but silence and salt.

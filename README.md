@@ -6,6 +6,8 @@ Research in geohazard monitoring, forecasting and mitigation, hydrology, and phy
 
 **Poetry / 诗歌：** [诗与时间](https://zjusuge.github.io/poetry/) · [诗歌维护说明](docs/POETRY-zh.md). Add a file in `_poems/` to publish a new poem with an independent reading page.
 
+**Poetry cards:** [诗笺工坊](https://zjusuge.github.io/poetry/cards/) · [卡片维护与实时 AI 接入](docs/POETRY-CARDS-zh.md).
+
 The redesign retains the original template's MIT license for code. Original poems and photographs remain copyright Tianlong Wang (苏格格调); the code license does not grant rights to these works. Research figures retain their respective publication credits. Original template documentation follows.
 
 ---
