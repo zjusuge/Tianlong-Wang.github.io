@@ -1,10 +1,12 @@
 # Tianlong Wang · Academic homepage
 
-Research in debris-flow monitoring, forecasting and mitigation, catchment hydrology, and physics-informed machine learning.
+Research in geohazard monitoring, forecasting and mitigation, hydrology, and physics-informed and explainable AI.
 
 **维护入口 / Editing content:** [中文维护说明](docs/MAINTENANCE-zh.md). Edit `_data/publications.yml`, `_data/funding.yml`, or `_data/software.yml` to add a record; the homepage and academic CV share these data.
 
-The redesign retains the original repository and its MIT license. Original template documentation follows.
+**Poetry / 诗歌：** [诗与时间](https://zjusuge.github.io/poetry/) · [诗歌维护说明](docs/POETRY-zh.md). Add a file in `_poems/` to publish a new poem with an independent reading page.
+
+The redesign retains the original template's MIT license for code. Original poems and photographs remain copyright Tianlong Wang (苏格格调); the code license does not grant rights to these works. Research figures retain their respective publication credits. Original template documentation follows.
 
 ---
 

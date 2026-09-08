@@ -1,15 +1,12 @@
 - institution: Zhejiang University
-  period: "September 2022 – June 2027 (expected)"
-  degree: "PhD · Ocean Technology and Engineering"
+  period: September 2022 – June 2027 (expected)
+  degree: PhD · Ocean Technology and Engineering
   department: Ocean College
-  supervisors: "Hongyue Sun"
+  supervisors: Hongyue Sun
+  supervisor_url: https://person.zju.edu.cn/0096428
 - institution: Nanyang Technological University
-  period: "September 2024 – September 2026"
+  period: September 2024 – September 2026
   degree: Joint Doctoral Research Training
   department: School of Civil and Environmental Engineering
-  supervisors: "Chu Jian"
-- institution: China Three Gorges University
-  period: "September 2018 – June 2022"
-  degree: "BEng · Civil Engineering (Geotechnical and Underground Engineering)"
-  department: College of Civil Engineering and Architecture
-  supervisors: "Huafeng Deng; Xiaoliang Xu"
+  supervisors: Chu Jian
+  supervisor_url: https://dr.ntu.edu.sg/entities/person/Chu-Jian
