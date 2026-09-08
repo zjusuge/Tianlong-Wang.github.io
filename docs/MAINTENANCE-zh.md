@@ -38,7 +38,7 @@
 - `topic` 可选 `Debris flows`、`Hydrology`、`Geotechnics`、`Algorithms`；会议论文的 `type` 为 `Conference paper`。
 - 在审/准备中的研究放在 `_data/home.yml` 的 `ongoing` 中，不放进已发表列表。
 - 要更换三篇代表作，修改 `_data/home.yml` 的 `selected`。`paper_id` 必须对应论文的 `id`；同时更新代表作标题、年份和期刊说明。
-- 代表作图片放在 `images/research/`，用 `figure` 指向图片，`figure_caption` 写图名与原文图号，`figure_alt` 写图片描述。图片完整显示，支持点击放大。
+- 代表作目前采用纯文字卡片，不展示论文原图。学术主页顶部 `Poetry` 链接进入诗歌站，诗歌站顶部 `学术主页` 链接返回。
 - 教育与导师链接在 `_data/education.yml`，`supervisor_url` 为学校个人主页。主页与 CV 共用数据，目前只展示浙大博士和 NTU 联培经历。
 - 审稿期刊在 `_data/service.yml` 的 `reviewing` 中新增一行，主页与 CV 会同步更新。
 - 诗歌网站位于 `/poetry/`；作品维护见 [诗歌网站维护说明](POETRY-zh.md)。

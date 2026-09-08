@@ -53,7 +53,6 @@ redirect_from:
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":{{ site.data.profile.name | jsonify }},"alternateName":"王天龙","url":"https://zjusuge.github.io/","jobTitle":"PhD Student","affiliation":[{"@type":"CollegeOrUniversity","name":"Zhejiang University"},{"@type":"CollegeOrUniversity","name":"Nanyang Technological University"}],"sameAs":["https://orcid.org/0000-0002-0598-5481","https://github.com/zjusuge","https://scholar.google.com/citations?user=JNiHto0AAAAJ","https://www.linkedin.com/in/tianlong-wang/"],"knowsAbout":["Debris flows","Catchment hydrology","Physics-informed machine learning","Landslide forecasting"]}
   </script>
-<script src="{{ '/assets/js/figure-viewer.js' | relative_url }}" defer></script>
 </head>
 
 <body id="top">
@@ -89,6 +88,7 @@ redirect_from:
         <a href="#research-funding">Funding</a>
         <a href="{{ '/cv/' | relative_url }}">CV ↗</a>
         <a href="#contact">Contact</a>
+        <a class="poetry-nav-link" href="{{ '/poetry/' | relative_url }}">Poetry ↗</a>
       </nav>
     </div>
   </header>
@@ -477,7 +477,6 @@ redirect_from:
       <div class="selected-grid">
       {% for work in site.data.home.selected %}
         <article class="selected-card">
-          {% if work.figure %}<figure class="publication-figure"><a class="figure-zoom" href="{{ work.figure | relative_url }}" data-figure-caption="{{ work.figure_caption | escape }}"><img src="{{ work.figure | relative_url }}" alt="{{ work.figure_alt | escape }}" width="600" height="380" loading="lazy"><span>View full figure ↗</span></a><figcaption>{{ work.figure_caption | escape }}</figcaption></figure>{% endif %}
           <div class="selected-top"><span class="selected-number">{{ work.number }}</span><span class="eyebrow">{{ work.category | escape }}</span></div>
           <p class="selected-venue">{{ work.venue | escape }}</p>
           <h3><a href="#{{ work.paper_id | escape }}">{{ work.title | escape }}</a></h3>
@@ -1072,7 +1071,6 @@ redirect_from:
         </div>
       </div>
     </section>
-    <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="figure-dialog-caption"><button class="figure-close" type="button" aria-label="Close figure">Close ×</button><img id="figure-dialog-image" alt=""><p id="figure-dialog-caption"></p></dialog>
   </main>
 
   <footer class="site-footer">
