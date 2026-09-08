@@ -1,0 +1,59 @@
+hero:
+  eyebrow: "Debris flows · Catchment hydrology · Physics-informed ML"
+  headline: "Understanding debris flows."
+  subheadline: "Connecting physics and prediction."
+  intro_before: "My research focuses on"
+  intro_focus: "debris-flow prediction in small catchments"
+  intro_after: >-
+    , connecting hydrological processes with physics-informed
+    and explainable machine learning.
+
+research:
+  title: "From catchment processes to hazard prediction."
+  intro: >-
+    I study debris-flow hazards through catchment hydrology,
+    physical understanding, and interpretable predictive modelling.
+
+  topics:
+    - letter: "a"
+      color: "blue"
+      category: "Debris-flow hazards"
+      title: "Where do debris flows occur, and how do they evolve?"
+      description: >-
+        Investigating debris-flow susceptibility, source volumes,
+        and flow velocity to support prediction in small catchments.
+      methods:
+        - "Susceptibility"
+        - "Source volume"
+        - "Flow dynamics"
+      link: "#paper-dome"
+      link_label: "Related publication"
+
+    - letter: "b"
+      color: "teal"
+      category: "Catchment hydrology"
+      title: "How does catchment response inform hazard prediction?"
+      description: >-
+        Examining runoff, water storage, and groundwater dynamics
+        as hydrological context for understanding geohazards.
+      methods:
+        - "Runoff"
+        - "Water storage"
+        - "Groundwater"
+      link: "#paper-swat"
+      link_label: "Related publication"
+
+    - letter: "c"
+      color: "clay"
+      category: "Physics-informed ML"
+      title: "How can physical knowledge improve learning?"
+      description: >-
+        Exploring ways to combine physical understanding,
+        machine learning, and model interpretation for
+        hydrological and debris-flow prediction.
+      methods:
+        - "Physical knowledge"
+        - "Machine learning"
+        - "Interpretation"
+      link: "#research-software"
+      link_label: "Research software"
