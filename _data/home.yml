@@ -86,28 +86,26 @@ ongoing:
 - title: Hydrological readiness & catchment storage
   description: Developing Basin Water Storage Degree (BWSD) and readiness forecasts from rainfall, drainage
     and monitored catchment conditions.
-  boundary: Current manuscripts provide warning-support evidence; documented debris-flow events and independent
-    catchments are needed to establish event-detection skill.
+  boundary: Warning-support research; event-detection skill requires validation on debris-flow events
+    and independent catchments.
   link: https://github.com/zjusuge/bwsd-fengshuwan-case
   link_label: BWSD case-study code
 - title: Physics-guided runoff & stage forecasting
   description: HydroPIML-RS combines hydrological memory, residual learning and physical consistency constraints
     for short-lead outlet forecasts.
-  boundary: Current manuscript; the forecasting targets are runoff and water stage.
+  boundary: ''
   link: https://github.com/zjusuge/hydropiml-rs-fengshuwan-case
   link_label: HydroPIML-RS code
 - title: Prediction with sparse observations
   description: Exploring tabular foundation models for debris-flow volume and hydrology-informed residual
     learning for landslide velocity, with prediction intervals.
-  boundary: Current manuscripts on small-sample volume prediction and sequential landslide forecasting.
+  boundary: ''
   link: https://github.com/zjusuge/TabPFNv2.5-DebrisFlow
   link_label: Volume benchmark code
 strengths:
 - title: Prediction methods
-  text: Ensemble design, metaheuristic optimization, time-series modelling and learning from sparse observations.
+  text: Ensembles, optimization and sparse-data forecasting.
 - title: Physics & hydrology
-  text: Physical constraints, residual learning and hydrological state concepts, including Basin Water
-    Storage Degree.
+  text: Physical constraints, hydrological memory and catchment storage.
 - title: Interpretation & uncertainty
-  text: SHAP-based analysis, calibrated prediction intervals and evaluation across temporal or spatial
-    splits.
+  text: SHAP interpretation, prediction intervals and temporal/spatial evaluation.

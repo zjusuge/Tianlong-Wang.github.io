@@ -34,7 +34,6 @@
     const book = document.querySelector('#poem-book');
     const genre = document.querySelector('#poem-form');
     const more = document.querySelector('#more-poems');
-    const random = document.querySelector('#random-poem');
     let limit = 20, matches = rows;
     const render = () => {
       const terms = query.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
@@ -44,15 +43,13 @@
       document.querySelector('#poetry-result-count').textContent = `找到 ${matches.length} 篇作品 · 已展示 ${Math.min(limit, matches.length)} 篇`;
       document.querySelector('#poetry-empty').hidden = matches.length > 0;
       more.hidden = matches.length <= limit;
-      random.disabled = matches.length === 0;
     };
-    form.hidden = false; random.hidden = false;
+    form.hidden = false;
     form.addEventListener('submit', event => event.preventDefault());
     form.addEventListener('input', () => { limit = 20; render(); });
     form.addEventListener('change', () => { limit = 20; render(); });
     form.addEventListener('reset', () => { setTimeout(() => { limit = 20; render(); }, 0); });
     more.addEventListener('click', () => { limit += 20; render(); });
-    random.addEventListener('click', () => { if (matches.length) location.href = matches[Math.floor(Math.random() * matches.length)].querySelector('a').href; });
     render();
   }
   const verse = document.querySelector('#poem-verse');
