@@ -58,7 +58,7 @@ class Page(HTMLParser):
         a=dict(attrs)
         if 'id' in a:self.ids.append(a['id'])
         if tag=='a' and 'href' in a:self.links.append(a['href'])
-        if tag in ['img','script'] and 'src' in a:self.links.append(a['src'])
+        if tag in ['img','script','audio','source'] and 'src' in a:self.links.append(a['src'])
         if tag=='link' and a.get('rel') in ['stylesheet','icon']:self.links.append(a['href'])
         if tag=='script':self.json_mode=a.get('type')=='application/ld+json'
     def handle_data(self,text):

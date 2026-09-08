@@ -1,1 +1,16 @@
 <footer class="poetry-footer"><span>© {{ site.time | date: '%Y' }} 苏格格调 · 王天龙</span><a href="{{ '/' | relative_url }}">另一种探索：学术与研究 ↗</a><a href="{{ '/poetry/' | relative_url }}">回到诗歌首页 ↑</a></footer>
+{% if site.data.poetry_music.enabled %}
+<aside class="poetry-music" aria-label="读诗配乐">
+  <div class="music-controls" hidden>
+    <div id="music-panel" class="music-panel" hidden>
+      <p class="music-title">{{ site.data.poetry_music.title | escape }}<small>{{ site.data.poetry_music.composer | escape }}</small></p>
+      <label for="music-seek">播放进度 <span id="music-time">0:00</span></label><input id="music-seek" type="range" min="0" max="100" value="0" step="1" disabled>
+      <label for="music-volume">音量</label><input id="music-volume" type="range" min="0" max="1" value="0.25" step="0.05">
+      <a href="{{ site.data.poetry_music.source | escape }}" target="_blank" rel="noopener noreferrer">{{ site.data.poetry_music.credit | escape }} · 录音来源 ↗</a>
+    </div>
+    <div class="music-bar"><button id="music-play" type="button" aria-pressed="false"><span id="music-icon" aria-hidden="true">♫</span><span id="music-label">听一会儿</span></button><button id="music-expand" type="button" aria-expanded="false" aria-controls="music-panel" aria-label="展开音乐设置">⋯</button></div>
+    <p id="music-status" role="status" aria-live="polite"></p>
+  </div>
+  <audio id="poetry-audio" controls preload="none" loop src="{{ site.data.poetry_music.src | relative_url }}" aria-label="{{ site.data.poetry_music.title | escape }}"></audio>
+</aside>
+{% endif %}
