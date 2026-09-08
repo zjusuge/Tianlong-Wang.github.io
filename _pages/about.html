@@ -1,8 +1,8 @@
 ---
 layout: null
 permalink: /
-title: "Tianlong Wang | Geohazards, Hydrology & Machine Learning"
-description: "Tianlong Wang — PhD student at Zhejiang University, with joint doctoral research training at NTU. Research on geohazards, hydrology, and physics-informed and explainable machine learning."
+title: "Tianlong Wang | Debris Flows & Physics-Informed ML"
+description: "Tianlong Wang studies debris-flow prediction in small catchments, connecting catchment hydrology with physics-informed and explainable machine learning."
 author_profile: false
 redirect_from:
   - /about/
@@ -89,10 +89,12 @@ redirect_from:
 
   <main id="tw-home" tabindex="-1">
 
-    <!-- Hero -->
+    <!-- Hero: research copy is maintained in _data/home.yml. -->
     <section class="hero container" id="about-me" aria-labelledby="hero-name">
       <div class="hero-copy">
-        <p class="eyebrow">Geohazards · Hydrology · Machine Learning</p>
+        <p class="eyebrow">
+          {{ site.data.home.hero.eyebrow | escape }}
+        </p>
 
         <div class="identity">
           <img
@@ -112,14 +114,13 @@ redirect_from:
         </div>
 
         <p class="hero-statement">
-          Understanding environmental processes.
-          <span>Building better predictions.</span>
+          {{ site.data.home.hero.headline | escape }}
+          <span>{{ site.data.home.hero.subheadline | escape }}</span>
         </p>
 
         <p class="hero-intro">
-          I combine physical knowledge and machine learning to study
-          <strong>debris flows, landslides, and hydrological processes</strong>,
-          with a focus on interpretable prediction and disaster mitigation.
+          {{ site.data.home.hero.intro_before | escape }}
+          <strong>{{ site.data.home.hero.intro_focus | escape }}</strong>{{ site.data.home.hero.intro_after | escape }}
         </p>
 
         <p class="hero-training">
@@ -422,76 +423,52 @@ redirect_from:
       </figure>
     </section>
 
-    <!-- Research -->
-    <section class="research-band" id="research" aria-labelledby="research-title">
+    <!-- Research: content is maintained in _data/home.yml. -->
+    <section
+      class="research-band"
+      id="research"
+      aria-labelledby="research-title"
+    >
       <div class="container">
         <div class="section-topline">
           <div>
-            <p class="eyebrow">Research direction</p>
-            <h2 id="research-title">Three connected questions.</h2>
+            <p class="eyebrow">Research focus</p>
+            <h2 id="research-title">
+              {{ site.data.home.research.title | escape }}
+            </h2>
           </div>
+
           <p class="section-intro">
-            Linking environmental understanding with data-driven prediction,
-            from slope processes to catchment response.
+            {{ site.data.home.research.intro | escape }}
           </p>
         </div>
 
         <div class="research-grid">
-          <article class="research-topic topic-blue">
-            <div class="topic-top">
-              <span class="topic-letter" aria-hidden="true">a</span>
-              <span class="eyebrow">Geohazards</span>
-            </div>
-            <h3>Where and how do debris flows develop?</h3>
-            <p>
-              Studying susceptibility, source volumes, and flow velocity,
-              together with landslide displacement and groundwater dynamics.
-            </p>
-            <p class="topic-method">
-              Hazard prediction · Slope response · Early warning
-            </p>
-            <a class="text-link" href="#paper-dome">
-              Related publication <span aria-hidden="true">↗</span>
-            </a>
-          </article>
+          {% for topic in site.data.home.research.topics %}
+            <article class="research-topic topic-{{ topic.color | escape }}">
+              <div class="topic-top">
+                <span class="topic-letter" aria-hidden="true">
+                  {{ topic.letter | escape }}
+                </span>
+                <span class="eyebrow">
+                  {{ topic.category | escape }}
+                </span>
+              </div>
 
-          <article class="research-topic topic-teal">
-            <div class="topic-top">
-              <span class="topic-letter" aria-hidden="true">b</span>
-              <span class="eyebrow">Hydrology</span>
-            </div>
-            <h3>How do catchments respond to change?</h3>
-            <p>
-              Exploring land-use effects, catchment water storage, and
-              runoff and water-stage prediction through physical and
-              data-driven modelling.
-            </p>
-            <p class="topic-method">
-              Catchment processes · Water storage · Forecasting
-            </p>
-            <a class="text-link" href="#paper-swat">
-              Related publication <span aria-hidden="true">↗</span>
-            </a>
-          </article>
+              <h3>{{ topic.title | escape }}</h3>
 
-          <article class="research-topic topic-clay">
-            <div class="topic-top">
-              <span class="topic-letter" aria-hidden="true">c</span>
-              <span class="eyebrow">Modelling</span>
-            </div>
-            <h3>What makes a prediction scientifically useful?</h3>
-            <p>
-              Bringing physical knowledge, model interpretation, and careful
-              evaluation into machine-learning workflows for environmental
-              applications.
-            </p>
-            <p class="topic-method">
-              Physics-informed ML · Explainability · Reliability
-            </p>
-            <a class="text-link" href="#research-software">
-              Research software <span aria-hidden="true">↗</span>
-            </a>
-          </article>
+              <p>{{ topic.description | escape }}</p>
+
+              <p class="topic-method">
+                {{ topic.methods | join: " · " | escape }}
+              </p>
+
+              <a class="text-link" href="{{ topic.link | escape }}">
+                {{ topic.link_label | escape }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          {% endfor %}
         </div>
       </div>
     </section>
