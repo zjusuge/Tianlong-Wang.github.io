@@ -44,6 +44,7 @@ for book in data['poetry']['books']:
     orders=sorted(p['order'] for p in poems if p['book']==book['id'])
     require(orders==list(range(1,len(orders)+1)),f'Non-contiguous poem order: {book["id"]}')
 for title in data['poetry']['featured_titles']:require(any(p['title']==title for p in poems),f'Missing featured poem: {title}')
+require(sum(p.get('key')==data['poetry'].get('latest_poem') for p in poems)==1,'Latest poem must reference exactly one existing poem key')
 
 class Page(HTMLParser):
     def __init__(self):super().__init__();self.ids=[];self.links=[];self.scripts=[];self.json_mode=False

@@ -33,6 +33,8 @@ verse: |-
 
 ## 修改介绍、推荐作品与设计
 
+首页“最新写下的诗”目前展示《倒计时》。上传新诗后，打开 `_data/poetry.yml`，把 `latest_poem` 改成新作品文件中的 `key` 即可替换，例如 `latest_poem: new-poem`。此选择独立于诗集篇序，不会因为修订旧诗而误换新作。新作的题目、节选和全文链接自动读取。
+
 - `_data/poetry.yml`：作者介绍、诗集简介、精选诗题。推荐标题须与作品的 `title` 完全一致。
 - `_pages/poetry.html`：首页结构。
 - `_layouts/poem.html`：每首诗的阅读页。
