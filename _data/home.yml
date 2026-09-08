@@ -1,59 +1,74 @@
+# Research copy: plain text, with layout handled by the template.
 hero:
   eyebrow: "Debris flows · Catchment hydrology · Physics-informed ML"
-  headline: "Understanding debris flows."
-  subheadline: "Connecting physics and prediction."
-  intro_before: "My research focuses on"
-  intro_focus: "debris-flow prediction in small catchments"
-  intro_after: >-
-    , connecting hydrological processes with physics-informed
-    and explainable machine learning.
-
+  headline: "Understanding water."
+  subheadline: "Anticipating debris flows."
+  intro_before: "I study"
+  intro_focus: "debris-flow monitoring, forecasting and mitigation in small catchments"
+  intro_after: ", connecting field observations and hydrological processes with physics-informed machine learning (PIML)."
 research:
-  title: "From catchment processes to hazard prediction."
-  intro: >-
-    I study debris-flow hazards through catchment hydrology,
-    physical understanding, and interpretable predictive modelling.
-
+  title: "From water dynamics to warning support."
+  intro: "My work connects rainfall, groundwater and catchment storage to hazard prediction, with an emphasis on interpretable models and engineering relevance."
   topics:
-    - letter: "a"
-      color: "blue"
-      category: "Debris-flow hazards"
-      title: "Where do debris flows occur, and how do they evolve?"
-      description: >-
-        Investigating debris-flow susceptibility, source volumes,
-        and flow velocity to support prediction in small catchments.
-      methods:
-        - "Susceptibility"
-        - "Source volume"
-        - "Flow dynamics"
-      link: "#paper-dome"
-      link_label: "Related publication"
-
-    - letter: "b"
-      color: "teal"
-      category: "Catchment hydrology"
-      title: "How does catchment response inform hazard prediction?"
-      description: >-
-        Examining runoff, water storage, and groundwater dynamics
-        as hydrological context for understanding geohazards.
-      methods:
-        - "Runoff"
-        - "Water storage"
-        - "Groundwater"
-      link: "#paper-swat"
-      link_label: "Related publication"
-
-    - letter: "c"
-      color: "clay"
-      category: "Physics-informed ML"
-      title: "How can physical knowledge improve learning?"
-      description: >-
-        Exploring ways to combine physical understanding,
-        machine learning, and model interpretation for
-        hydrological and debris-flow prediction.
-      methods:
-        - "Physical knowledge"
-        - "Machine learning"
-        - "Interpretation"
-      link: "#research-software"
-      link_label: "Research software"
+    - letter: "01"
+      color: blue
+      category: "Observe & understand"
+      title: "What makes a catchment ready to respond?"
+      description: "Field monitoring, rainfall–groundwater analysis and water-balance indicators help characterize the evolving hydrological conditions that precede hazardous responses."
+      methods: ["Field monitoring", "Hydrological memory", "Water storage"]
+      link: "#current-research"
+      link_label: "Current research"
+    - letter: "02"
+      color: teal
+      category: "Forecast & explain"
+      title: "How can physics improve predictions?"
+      description: "I develop physics-informed and explainable learning methods for debris-flow susceptibility, source volume and velocity, alongside runoff, water-stage and landslide forecasts."
+      methods: ["PIML", "Ensemble learning", "Uncertainty"]
+      link: "#selected-work"
+      link_label: "Selected work"
+    - letter: "03"
+      color: clay
+      category: "Assess & mitigate"
+      title: "How can predictions inform intervention?"
+      description: "Collaborative work on siphon drainage, slope stabilization and geotechnical modelling connects hydrological understanding with practical hazard mitigation."
+      methods: ["Siphon drainage", "Slope stabilization", "Numerical modelling"]
+      link: "#paper-anchor-siphon"
+      link_label: "Mitigation research"
+selected:
+  - paper_id: paper-source-volume
+    number: "01"
+    category: "Physics-informed learning"
+    title: "Learning from limited debris-flow inventories."
+    summary: "GAMMA combines conditional diffusion, multimodal learning and a physics-guided regularizer to estimate post-seismic debris-flow source volumes."
+    venue: "Georisk · 2026"
+    detail: "Physical constraints + generative learning"
+  - paper_id: paper-velocity
+    number: "02"
+    category: "Debris-flow dynamics"
+    title: "Predicting velocity. Explaining the drivers."
+    summary: "A multi-strategy stacking model estimates debris-flow velocity at Jiangjiagou, with SHAP analysis of feature contributions and interactions."
+    venue: "Journal of Hydrology · 2024"
+    detail: "Ensemble prediction + model interpretation"
+  - paper_id: paper-dome
+    number: "03"
+    category: "Regional susceptibility"
+    title: "Mapping where attention is needed."
+    summary: "DOME combines dynamic ensemble selection, calibration and spatial evaluation for debris-flow susceptibility assessment along a mountain transport corridor."
+    venue: "Natural Hazards · 2026"
+    detail: "Spatial assessment + open research code"
+ongoing:
+  - title: "Hydrological readiness & catchment storage"
+    description: "Developing Basin Water Storage Degree (BWSD) and readiness forecasts from rainfall, drainage and monitored catchment conditions."
+    boundary: "Current manuscripts provide warning-support evidence; documented debris-flow events and independent catchments are needed to establish event-detection skill."
+    link: "https://github.com/zjusuge/bwsd-fengshuwan-case"
+    link_label: "BWSD case-study code"
+  - title: "Physics-guided runoff & stage forecasting"
+    description: "HydroPIML-RS combines hydrological memory, residual learning and physical consistency constraints for short-lead outlet forecasts."
+    boundary: "Current manuscript; the forecasting targets are runoff and water stage."
+    link: "https://github.com/zjusuge/hydropiml-rs-fengshuwan-case"
+    link_label: "HydroPIML-RS code"
+  - title: "Prediction with sparse observations"
+    description: "Exploring tabular foundation models for debris-flow volume and hydrology-informed residual learning for landslide velocity, with prediction intervals."
+    boundary: "Current manuscripts on small-sample volume prediction and sequential landslide forecasting."
+    link: "https://github.com/zjusuge/TabPFNv2.5-DebrisFlow"
+    link_label: "Volume benchmark code"

@@ -1,3 +1,13 @@
+# Tianlong Wang · Academic homepage
+
+Research in debris-flow monitoring, forecasting and mitigation, catchment hydrology, and physics-informed machine learning.
+
+**维护入口 / Editing content:** [中文维护说明](docs/MAINTENANCE-zh.md). Edit `_data/publications.yml`, `_data/funding.yml`, or `_data/software.yml` to add a record; the homepage and academic CV share these data.
+
+The redesign retains the original repository and its MIT license. Original template documentation follows.
+
+---
+
 
 <h1 align="center">
 AcadHomepage
