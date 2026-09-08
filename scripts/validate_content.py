@@ -75,6 +75,7 @@ if len(sys.argv)>1:
     for target in targets:
         p=Page();html=(build/target).read_text(encoding='utf-8');p.feed(html)
         if target in ['index.html','cv/index.html']:require(not re.search(r'[\u3400-\u9fff]',html),f'Chinese text remains in English academic page: {target}')
+        if target.startswith('poetry'):require(not re.search(r'王天龙|Tianlong[ _-]*Wang|Wang[ ,_-]*Tianlong',html,re.I),f'Real name remains in poetry page: {target}')
         require(len(p.ids)==len(set(p.ids)),f'Duplicate HTML ids in {target}')
         require('{{' not in html and '{%' not in html,f'Unrendered template in {target}')
         for script in p.scripts:json.loads(script)
