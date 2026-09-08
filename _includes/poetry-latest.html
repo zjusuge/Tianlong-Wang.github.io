@@ -1,5 +1,5 @@
 {% assign latest_matches = site.poems | where: 'key', site.data.poetry.latest_poem %}{% assign latest = latest_matches | first %}{% if latest %}
 <section id="latest" class="poetry-container latest-section" aria-labelledby="latest-heading">
-  <div class="latest-intro"><p class="poetry-kicker">近作 / LATEST POEM</p><h2 id="latest-heading">最新写下的诗</h2></div>
+  <div class="latest-intro"><p class="poetry-kicker">近作 / LATEST POEM</p><h2 id="latest-heading">新近写下</h2></div>
   <article class="latest-poem"><p class="poetry-kicker">{{ latest.book_title | escape }} · {{ latest.form | escape }}</p><h3><a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a></h3><p class="latest-excerpt">{{ latest.verse | truncate: 180 | escape }}</p><a class="poetry-text-link" href="{{ latest.url | relative_url }}">阅读全文 ↗</a></article>
 </section>{% endif %}
