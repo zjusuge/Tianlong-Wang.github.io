@@ -1,0 +1,39 @@
+---
+layout: null
+permalink: /poetry/cards/
+title: 诗笺工坊
+description: 选一段苏格格调的诗，制成可收藏、分享与打印的诗歌卡片。
+---
+<!DOCTYPE html><html lang="zh-CN"><head>{% include poetry-head.html %}
+<link rel="stylesheet" href="{{ '/assets/css/poetry-cards.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script src="{{ '/assets/js/poetry-card-renderer.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/poetry-cards.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+</head><body class="poetry-site card-studio">{% include poetry-header.html %}
+<main id="poetry-main" class="poetry-container"><header class="studio-heading"><p class="poetry-kicker">诗的另一种相遇 / POETRY CARDS</p><h1>诗笺工坊</h1><p>摘一段诗，留一张笺。赠人，或留给自己。</p></header>
+<noscript><p>制卡需要启用 JavaScript。你仍可<a href="{{ '/poetry/#library' | relative_url }}">阅读全部诗歌</a>。</p></noscript>
+<div id="studio" class="studio-grid" hidden>
+<section class="studio-controls" aria-label="诗歌卡片设置">
+<fieldset><legend><span>01</span> 选一段诗</legend>
+<label for="card-scope">选诗范围</label><select id="card-scope"><option value="all">全部诗歌</option><option value="one">指定一首</option></select>
+<div id="poem-picker" hidden><label for="card-poem-query">查找诗题</label><input id="card-poem-query" type="search" placeholder="诗题关键词"><label for="card-poem">作品</label><select id="card-poem"></select></div>
+<label for="card-mode">选句方式</label><select id="card-mode"><option value="curated">AI 预选句库</option><option value="random">随机选段</option><option value="manual">手动选段</option><option value="live">实时 AI 选句</option></select>
+<p id="mode-note" class="studio-note"></p>
+<div id="live-settings" hidden><label for="card-mood">想读的意境（可选）</label><input id="card-mood" maxlength="100" placeholder="例如：山川、离别、希望"><p id="live-note" class="studio-note"></p></div>
+<button id="card-draw" class="poetry-button" type="button">换一段诗 ↻</button>
+<details id="source-details"><summary>查看原诗 / 自己选段</summary><label for="card-source" class="studio-note">选中文字后，点击「使用选中文字」</label><textarea id="card-source" rows="10" readonly></textarea><div class="source-actions"><button id="use-selection" type="button">使用选中文字</button><button id="use-full" type="button">使用整首</button></div></details>
+<label for="card-excerpt">卡片中的诗句</label><textarea id="card-excerpt" rows="5" spellcheck="false"></textarea><p class="studio-note">可删选原文，保留原句与署名。长诗自动分张。</p><a id="card-source-link" class="poetry-text-link" href="{{ '/poetry/#library' | relative_url }}">阅读原诗 ↗</a>
+</fieldset>
+<fieldset><legend><span>02</span> 选一种风格</legend><div id="card-styles" class="card-style-grid" role="group" aria-label="卡片风格"><button type="button" data-style="mist" aria-pressed="true"><i class="swatch swatch-mist"></i>远山暮紫</button><button type="button" data-style="moon" aria-pressed="false"><i class="swatch swatch-moon"></i>海上月明</button><button type="button" data-style="botanical" aria-pressed="false"><i class="swatch swatch-botanical"></i>草木笺</button><button type="button" data-style="paper" aria-pressed="false"><i class="swatch swatch-paper"></i>素纸留白</button><button type="button" data-style="receipt" aria-pressed="false"><i class="swatch swatch-receipt"></i>诗歌小票</button><button type="button" data-style="bookmark" aria-pressed="false"><i class="swatch swatch-bookmark"></i>随身书签</button></div>
+<div class="studio-two"><div><label for="card-direction">排版</label><select id="card-direction"><option value="horizontal">横排</option><option value="vertical">竖排</option></select></div><div><label for="card-font">字号</label><select id="card-font"><option value="small">小</option><option value="medium" selected>适中</option><option value="large">大</option></select></div></div>
+</fieldset>
+</section>
+<section class="studio-preview" aria-label="卡片预览与导出"><div class="preview-head"><span id="card-size-label">卡片预览</span><span id="card-page-label" role="status"></span></div><div class="canvas-mat"><canvas id="poetry-card" width="1080" height="1440" role="img" aria-label="诗歌卡片预览"></canvas></div><div class="card-paging" id="card-paging" hidden><button id="card-prev" type="button">← 上一张</button><button id="card-next" type="button">下一张 →</button></div>
+<div class="studio-exports"><button id="card-download" class="poetry-button" type="button">下载 PNG</button><button id="card-share" type="button">分享卡片</button><button id="card-copy" type="button">复制卡片链接</button><button id="card-print" type="button">打印 / PDF</button></div>
+<p id="card-status" class="studio-status" role="status" aria-live="polite"></p><p class="studio-note">分享链接可还原选句与样式；打印包含这段诗的全部卡片。</p></section>
+</div>
+<section class="studio-fallback" id="studio-fallback"><p>正在准备诗稿与画纸…</p></section>
+</main><div id="card-print-area" aria-hidden="true"></div>
+<div id="card-library" hidden>{% assign sorted_poems = site.poems | sort: 'order' %}{% for poem in sorted_poems %}<article data-key="{{ poem.key | escape }}" data-title="{{ poem.title | strip | escape }}" data-book="{{ poem.book_title | escape }}" data-form="{{ poem.form | escape }}" data-url="{{ poem.url | relative_url }}"><pre>{{ poem.verse | escape }}</pre></article>{% endfor %}</div>
+<div id="card-curated" hidden>{% for item in site.data.poetry_cards.curated %}<pre data-key="{{ item.poem | escape }}">{{ item.excerpt | escape }}</pre>{% endfor %}</div>
+<div id="card-config" data-endpoint="{{ site.data.poetry_cards.realtime_endpoint | escape }}" hidden></div>
+{% include poetry-footer.html %}</body></html>

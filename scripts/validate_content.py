@@ -34,6 +34,7 @@ for project in data['software']:
     require(any('github.com/' in x['url'] for x in project['links']),f'Missing repository: {project["name"]}')
 require(isinstance(data['profile']['seeking_postdoc'],bool),'seeking_postdoc must be true or false')
 poems=[yaml.safe_load(p.read_text(encoding='utf-8').split('---',2)[1]) for p in (ROOT/'_poems').glob('*.md')]
+require(len({p['key'] for p in poems})==len(poems),'Poem keys must be globally unique')
 poem_urls=set()
 for poem in poems:
     for key in ['title','book','order','permalink','verse','chapter','form']:require(bool(poem.get(key)),f'Missing poem field: {key}')
@@ -45,6 +46,11 @@ for book in data['poetry']['books']:
     require(orders==list(range(1,len(orders)+1)),f'Non-contiguous poem order: {book["id"]}')
 for title in data['poetry']['featured_titles']:require(any(p['title']==title for p in poems),f'Missing featured poem: {title}')
 require(sum(p.get('key')==data['poetry'].get('latest_poem') for p in poems)==1,'Latest poem must reference exactly one existing poem key')
+for item in data['poetry_cards']['curated']:
+    matches=[p for p in poems if p['key']==item['poem']]
+    require(len(matches)==1 and item['excerpt'] in matches[0]['verse'],'Card excerpt must match original poem verbatim')
+endpoint=data['poetry_cards'].get('realtime_endpoint','')
+require(not endpoint or endpoint.startswith('https://'),'Realtime endpoint must be HTTPS')
 
 class Page(HTMLParser):
     def __init__(self):super().__init__();self.ids=[];self.links=[];self.scripts=[];self.json_mode=False
@@ -64,8 +70,11 @@ if len(sys.argv)>1:
     build=Path(sys.argv[1])
     targets=['index.html','cv/index.html']+[str(p.relative_to(build)) for p in (build/'poetry').rglob('*.html')]
     require((build/'poetry/index.html').exists(),'Poetry homepage missing')
+    library=json.loads((build/'poetry/cards/library.json').read_text(encoding='utf-8'))
+    require({p['key']:p['verse'] for p in library}=={p['key']:p['verse'] for p in poems},'Card library must preserve every original poem')
     for target in targets:
         p=Page();html=(build/target).read_text(encoding='utf-8');p.feed(html)
+        if target in ['index.html','cv/index.html']:require(not re.search(r'[\u3400-\u9fff]',html),f'Chinese text remains in English academic page: {target}')
         require(len(p.ids)==len(set(p.ids)),f'Duplicate HTML ids in {target}')
         require('{{' not in html and '{%' not in html,f'Unrendered template in {target}')
         for script in p.scripts:json.loads(script)

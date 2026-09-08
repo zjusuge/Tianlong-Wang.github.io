@@ -82,6 +82,7 @@ include:
   - files
 
 exclude:
+  - server
   - scripts
   - docs
   - google_scholar_crawler
