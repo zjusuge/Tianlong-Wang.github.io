@@ -1,0 +1,193 @@
+- id: paper-dome
+  year: 2026
+  title: 'DOME: A Dynamic Optimization Meta-Ensemble Framework for Debris-Flow Susceptibility Assessment
+    with SHAP-Based Interpretation'
+  venue: Natural Hazards, 122, Article 545.
+  type: Journal article
+  topic: Debris flows
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s11069-026-08307-2
+  - label: Code
+    url: https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment
+  - label: Code archive
+    url: https://doi.org/10.5281/zenodo.16911533
+  authors: Tianlong Wang*, H. Yang
+- id: paper-source-volume
+  year: 2026
+  title: 'Intelligent Prediction of Post-Seismic Debris Flow Source Volumes: A Physics-Informed Generative
+    Deep Learning Framework'
+  venue: 'Georisk: Assessment and Management of Risk for Engineered Systems and Geohazards, 1–29.'
+  type: Journal article
+  topic: Debris flows
+  links:
+  - label: DOI
+    url: https://doi.org/10.1080/17499518.2026.2651228
+  authors: Tianlong Wang, H. Yang, H. Sun*
+- id: paper-swat
+  year: 2026
+  title: 'Impacts of Land Use Change on Watershed Hydrological Processes Based on the SWAT-ML-SHAP
+    Model: A Case Study of Fenshuijiang River Basin'
+  venue: Earth Science.
+  type: Journal article
+  topic: Hydrology
+  links:
+  - label: DOI
+    url: https://doi.org/10.3799/dqkx.2025.290
+  authors: K. Zhang, Tianlong Wang, J. Su, H. Sun*
+- id: paper-4
+  year: 2025
+  title: An integrated IKOA-CNN-BiGRU-Attention framework with SHAP explainability for high-precision
+    debris flow hazard prediction in the Nujiang river basin, China
+  venue: PLOS ONE, 20(6), e0326587.
+  type: Journal article
+  topic: Debris flows
+  links:
+  - label: DOI
+    url: https://doi.org/10.1371/journal.pone.0326587
+  - label: Data
+    url: https://doi.org/10.5281/zenodo.15050116
+  authors: H. Yang, Tianlong Wang*, N. I. Fomin, S. Xiao, L. Liu
+- id: paper-5
+  year: 2025
+  title: 'A novel method for predicting debris flow hazard: a multi-strategy fusion approach based
+    on the light gradient boosting machine framework'
+  venue: Stochastic Environmental Research and Risk Assessment, 39, 4867–4890.
+  type: Journal article
+  topic: Debris flows
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s00477-025-02955-9
+  authors: Tianlong Wang, Q. Ge, T. Ma, et al.
+- id: paper-drainage
+  year: 2025
+  title: 3D Numerical Simulation of the Shortest Length of a Blocking Section for a Self-Starting
+    Drainage Method
+  venue: International Journal of Geomechanics
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.1061/IJGNAI.GMENG-10939
+  authors: X. Wang, Q. Ge, K. Zhang, Tianlong Wang, T. Ma, H. Sun
+- id: paper-calibration
+  year: 2025
+  title: Multi-parameter Calibration Method and Application of Constitutive Model Based on Improved
+    Dung Beetle Optimization Algorithm
+  venue: Journal of Disaster Prevention and Mitigation Engineering, 45(5), 1014–1023. (In Chinese)
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.13409/j.cnki.jdpme.20250224001
+  authors: P. Lu, Y. Yu*, S. Liu, Tianlong Wang, Z. Xu
+- id: paper-velocity
+  year: 2024
+  title: Prediction and explanation of debris flow velocity based on multi-strategy fusion Stacking
+    ensemble learning model
+  venue: Journal of Hydrology, 638, 131347.
+  type: Journal article
+  topic: Debris flows
+  links:
+  - label: DOI
+    url: https://doi.org/10.1016/j.jhydrol.2024.131347
+  authors: Tianlong Wang, K. Zhang, Z. Liu, T. Ma, R. Luo, H. Chen, X. Wang, W. Ge, H. Sun*
+- id: paper-7
+  year: 2024
+  title: Study and verification on an improved comprehensive prediction model of landslide displacement
+  venue: Bulletin of Engineering Geology and the Environment, 83, Article 90.
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s10064-024-03581-5
+  authors: Tianlong Wang, R. Luo, T. Ma, et al.
+- id: paper-8
+  year: 2024
+  title: Indoor Model Test of Negative Pressure Drainage Method for Treatment of Engineering Mud
+  venue: Journal of Changjiang River Scientific Research Institute, 41(9), 114–122, 129. (In Chinese)
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.11988/ckyyb.20230665
+  authors: Z. Chu, S. Yu, X. Li, X. Lu, X. Wang, R. Luo, Tianlong Wang*
+- id: paper-9
+  year: 2024
+  title: Study on wavelet multi-scale analysis and prediction of landslide groundwater
+  venue: Journal of Hydroinformatics, 26(1), 237–254.
+  type: Journal article
+  topic: Hydrology
+  links:
+  - label: DOI
+    url: https://doi.org/10.2166/hydro.2023.299
+  authors: Tianlong Wang, D. Peng, X. Wang, B. Wu, R. Luo, Z. Chu, H. Sun*
+- id: paper-anchor-siphon
+  year: 2023
+  title: A new anchor-siphon drainage combined method used for slope stabilization
+  venue: Journal of Mountain Science, 20(11), 3295–3311
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s11629-023-7969-x
+  authors: H. Sun, X. Wang, Y. Yu*, J. Shu, Tianlong Wang, R. Luo, Z. Chu
+- id: paper-coral-sand
+  year: 2022
+  title: Experimental Research on Shear Mechanical Characteristics of Pile-Coral Sand Interface
+  venue: Chinese Journal of Underground Space and Engineering, 18(6), 1891–1897. (In Chinese)
+  type: Journal article
+  topic: Geotechnics
+  links: []
+  authors: X. Xu, X. Lei, Tianlong Wang, G. Kong*, C. Li
+- id: paper-10
+  year: 2021
+  title: 'Determining the location of River Dam Group based on set cover Model: A case study of Zambezi
+    River Basin'
+  venue: Scientific Research and Reviews, 14, 122.
+  type: Journal article
+  topic: Other
+  links:
+  - label: DOI
+    url: https://doi.org/10.28933/srr-2021-03-1005
+  authors: Tianlong Wang, Xiaorui Tao, Dong-kun Wu, Haotian Feng
+- id: paper-11
+  year: 2021
+  title: Carbon emission forecast of China Transport Industry Based on Grey - Markov
+  venue: International Conference on Computing and Big Data (ICCBD).
+  type: Conference paper
+  topic: Other
+  links:
+  - label: DOI
+    url: https://doi.org/10.1109/ICCBD53833.2021.00192
+  authors: Tianlong Wang, J. Wang, X. Shao
+- id: paper-12
+  year: 2020
+  title: Research on Prediction and Optimization of Slope Deformation in Mining Area
+  venue: Environment, Resource and Ecology Journal, 4, 66–69.
+  type: Journal article
+  topic: Geotechnics
+  links:
+  - label: DOI
+    url: https://doi.org/10.23977/erej.2020.040110
+  authors: Tianlong Wang, H. Zhang, X. Tao, W. Chu
+- id: paper-13
+  year: 2020
+  title: Optimization of Task Pricing Based on Multiple Regression Analysis and Game Theory
+  venue: Journal of eSciences, 3, 9.
+  type: Journal article
+  topic: Other
+  links:
+  - label: DOI
+    url: https://doi.org/10.28933/esciences-2020-01-1805
+  authors: Tianlong Wang, Hongyan Bao, Hairui Zhang
+- id: paper-14
+  year: 2020
+  title: Predicting Traffic Congestion Time Based on Kalman Filter Algorithm
+  venue: Advances in Research and Reviews, 1, 7.
+  type: Journal article
+  topic: Other
+  links:
+  - label: DOI
+    url: https://doi.org/10.28933/arr-2020-06-2205
+  authors: Tianlong Wang, Xiaorui Tao, Jiamei Zhang, Yulei Li

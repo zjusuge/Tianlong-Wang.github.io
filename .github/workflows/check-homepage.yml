@@ -1,0 +1,28 @@
+name: Check academic homepage
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install PyYAML==6.0.3
+      - run: python scripts/validate_content.py
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      - run: bundle exec jekyll build --destination _site
+      - run: python scripts/validate_content.py _site
+      - uses: actions/upload-artifact@v4
+        with:
+          name: homepage-preview
+          path: _site

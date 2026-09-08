@@ -1,0 +1,41 @@
+- name: DOME
+  category: Geohazard assessment
+  description: An ensemble framework for debris-flow susceptibility, linking model optimization with
+    SHAP interpretation.
+  tags:
+  - Ensemble learning
+  - Interpretation
+  links:
+  - label: Repository
+    url: https://github.com/zjusuge/DOME_Dynamic-Optimization-Meta-Ensemble-Framework-for-Computational-Debris-Flow-Risk-Assessment
+  - label: Paper
+    url: https://doi.org/10.1007/s11069-026-08307-2
+  - label: Archive
+    url: https://doi.org/10.5281/zenodo.16911533
+- name: TabPFNv2.5-DebrisFlow
+  category: Small-sample prediction
+  description: A debris-flow volume benchmark comparing TabPFN-2.5 with machine-learning baselines.
+  tags:
+  - Tabular learning
+  - Benchmarking
+  links:
+  - label: Repository
+    url: https://github.com/zjusuge/TabPFNv2.5-DebrisFlow
+- name: BWSD
+  category: Catchment hydrology
+  description: Fengshuwan case-study code for calculating daily Basin Water Storage Degree.
+  tags:
+  - Water storage
+  - Case study
+  links:
+  - label: Repository
+    url: https://github.com/zjusuge/bwsd-fengshuwan-case
+- name: HydroPIML-RS
+  category: Hydrological prediction
+  description: Fengshuwan case-study code for short-lead runoff and water-stage prediction.
+  tags:
+  - Runoff
+  - Water stage
+  links:
+  - label: Repository
+    url: https://github.com/zjusuge/hydropiml-rs-fengshuwan-case

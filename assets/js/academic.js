@@ -103,6 +103,7 @@
   const controls = document.getElementById("publication-controls");
   const searchInput = document.getElementById("publication-search");
   const yearSelect = document.getElementById("publication-year");
+  const topicSelect = document.getElementById("publication-topic");
   const resultStatus = document.getElementById("publication-status");
   const emptyState = document.getElementById("publication-empty");
 
@@ -139,6 +140,7 @@
       return {
         element,
         year: element.dataset.year || "",
+        topic: element.dataset.topic || "",
         text: normalize(`${element.textContent} ${linkAddresses}`)
       };
     });
@@ -170,7 +172,7 @@
           record.text.includes(term)
         );
 
-        const visible = matchesYear && matchesSearch;
+        const visible = matchesYear && matchesSearch && (!topicSelect || topicSelect.value === "all" || record.topic === topicSelect.value);
         record.element.hidden = !visible;
 
         if (visible) visibleCount += 1;
@@ -186,6 +188,7 @@
     resetPublicationFilters = () => {
       searchInput.value = "";
       yearSelect.value = "all";
+      if (topicSelect) topicSelect.value = "all";
       applyPublicationFilters();
     };
 
@@ -201,6 +204,7 @@
 
     searchInput.addEventListener("input", applyPublicationFilters);
     yearSelect.addEventListener("change", applyPublicationFilters);
+    if (topicSelect) topicSelect.addEventListener("change", applyPublicationFilters);
 
     controls.hidden = false;
     resultStatus.hidden = false;
