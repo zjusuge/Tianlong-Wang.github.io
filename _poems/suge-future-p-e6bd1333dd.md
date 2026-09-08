@@ -1,8 +1,6 @@
 ---
 layout: poem
-title: |2-
-
-  十一月的风
+title: 十一月的风
 book: suge-future
 book_title: 苏格未来
 book_status: 写作中 · 暂定名

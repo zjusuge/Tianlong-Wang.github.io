@@ -3,6 +3,33 @@
   const form = document.querySelector('#poetry-search');
   if (form) {
     const rows = [...document.querySelectorAll('#poem-index li')];
+    const draw = document.querySelector('#draw-poem');
+    if (draw && rows.length) {
+      let bag = [], previous;
+      const pick = () => {
+        if (!bag.length) {
+          bag = [...rows];
+          for (let i = bag.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [bag[i], bag[j]] = [bag[j], bag[i]];
+          }
+          if (bag.length > 1 && bag[bag.length - 1] === previous) [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+        }
+        const row = bag.pop(), link = row.querySelector('a');
+        previous = row;
+        const full = row.dataset.verse;
+        const excerpt = full.split('\n').slice(0, 8).join('\n').slice(0, 280).trimEnd();
+        document.querySelector('#chance-title').textContent = link.textContent.trim();
+        document.querySelector('#chance-meta').textContent = `${row.querySelector('.poem-index-book').textContent} · ${row.dataset.form} · 节选`;
+        document.querySelector('#chance-excerpt').textContent = excerpt + (excerpt.length < full.length ? '\n…' : '');
+        const destination = document.querySelector('#chance-link');
+        destination.href = link.href; destination.textContent = '阅读全文 ↗';
+        document.querySelector('#draw-status').textContent = `本次翻到：${link.textContent.trim()}`;
+      };
+      draw.hidden = false;
+      draw.addEventListener('click', pick);
+      pick();
+    }
     const query = document.querySelector('#poem-query');
     const book = document.querySelector('#poem-book');
     const genre = document.querySelector('#poem-form');
